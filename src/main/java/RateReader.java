@@ -91,6 +91,7 @@ public class RateReader {
 		// TODO Auto-generated method stub
 		RateReader test = new RateReader("rate_sample.csv");
 		System.out.println(test.getFemaleRates());
+		System.out.println(test.getMaleRates());
 	}
 
 }
