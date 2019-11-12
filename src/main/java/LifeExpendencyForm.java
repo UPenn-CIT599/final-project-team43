@@ -1,18 +1,3 @@
-/*
- * Copyright 2019 sally.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
 
 /**
  *
@@ -20,9 +5,9 @@
  */
 public class LifeExpendencyForm extends javax.swing.JFrame {
 
-  private int expendency;
+  private double expendency;
 
-  public int getExpendency() {
+  public double getExpendency() {
     return expendency;
   }
 
@@ -151,7 +136,7 @@ public class LifeExpendencyForm extends javax.swing.JFrame {
           .addComponent(gender, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
           .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
           .addComponent(currentAge, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
           .addComponent(jLabel3))
         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -172,8 +157,8 @@ public class LifeExpendencyForm extends javax.swing.JFrame {
 
   private void NextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NextActionPerformed
     // ODO add your handling code here:
-    TestCalculator testCalculator = new TestCalculator(gender.getSelectedItem().toString(), Integer.valueOf(currentAge.getText()));
-    expendency = testCalculator.calculate();
+    LifeExpectancy le = new LifeExpectancy("rate_sample.csv");
+    expendency = le.calculateEx(gender.getSelectedItem().toString(), Integer.valueOf(currentAge.getText()));
     InvestmentForm newJFrame2 = new InvestmentForm(expendency);
     newJFrame2.setVisible(true);
 

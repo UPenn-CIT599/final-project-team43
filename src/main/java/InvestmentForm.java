@@ -1,3 +1,5 @@
+
+
 /*
  * Copyright 2019 sally.
  *
@@ -13,7 +15,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 /**
  *
  * @author sally
@@ -23,9 +24,10 @@ public class InvestmentForm extends javax.swing.JFrame {
   /**
    * Creates new form NewJFrame
    */
-  public InvestmentForm(int expendency) {
+  public InvestmentForm(double expendency) {
     initComponents();
-    lifeExpendency.setText(String.valueOf("Based on your current age and gender, your life expectancy is age " + expendency));
+    LifeTime.setText(String.valueOf("Your life expectancy is " + expendency + " years"));
+
   }
 
   /**
@@ -36,10 +38,10 @@ public class InvestmentForm extends javax.swing.JFrame {
   // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
   private void initComponents() {
 
+    lifeExpendency = new javax.swing.JLabel();
+    expendency = new javax.swing.JLabel();
     Next = new javax.swing.JButton();
     jLabel1 = new javax.swing.JLabel();
-    expendency = new javax.swing.JLabel();
-    lifeExpendency = new javax.swing.JLabel();
     jPanel1 = new javax.swing.JPanel();
     jLabel6 = new javax.swing.JLabel();
     jPanel2 = new javax.swing.JPanel();
@@ -49,6 +51,8 @@ public class InvestmentForm extends javax.swing.JFrame {
     currentAge = new javax.swing.JTextField();
     currentAge1 = new javax.swing.JTextField();
     currentAge2 = new javax.swing.JTextField();
+    jPanel3 = new javax.swing.JPanel();
+    LifeTime = new javax.swing.JLabel();
 
     setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
     setFont(new java.awt.Font(".SF NS Text", 0, 14)); // NOI18N
@@ -71,16 +75,16 @@ public class InvestmentForm extends javax.swing.JFrame {
     jPanel1Layout.setHorizontalGroup(
       jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
       .addGroup(jPanel1Layout.createSequentialGroup()
-        .addGap(34, 34, 34)
-        .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 674, Short.MAX_VALUE)
-        .addGap(59, 59, 59))
+        .addGap(111, 111, 111)
+        .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 694, Short.MAX_VALUE)
+        .addGap(94, 94, 94))
     );
     jPanel1Layout.setVerticalGroup(
       jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-      .addGroup(jPanel1Layout.createSequentialGroup()
-        .addGap(26, 26, 26)
-        .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
-        .addGap(26, 26, 26))
+      .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+        .addContainerGap(17, Short.MAX_VALUE)
+        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+        .addContainerGap())
     );
 
     jLabel2.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
@@ -140,7 +144,7 @@ public class InvestmentForm extends javax.swing.JFrame {
     jPanel2Layout.setVerticalGroup(
       jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
       .addGroup(jPanel2Layout.createSequentialGroup()
-        .addGap(11, 11, 11)
+        .addGap(15, 15, 15)
         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
           .addComponent(jLabel2)
           .addComponent(currentAge, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -155,49 +159,73 @@ public class InvestmentForm extends javax.swing.JFrame {
         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
     );
 
+    LifeTime.setText("-");
+
+    javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+    jPanel3.setLayout(jPanel3Layout);
+    jPanel3Layout.setHorizontalGroup(
+      jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+      .addGroup(jPanel3Layout.createSequentialGroup()
+        .addGap(111, 111, 111)
+        .addComponent(LifeTime, javax.swing.GroupLayout.PREFERRED_SIZE, 476, javax.swing.GroupLayout.PREFERRED_SIZE)
+        .addContainerGap(62, Short.MAX_VALUE))
+    );
+    jPanel3Layout.setVerticalGroup(
+      jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+      .addGroup(jPanel3Layout.createSequentialGroup()
+        .addGap(17, 17, 17)
+        .addComponent(LifeTime, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+        .addContainerGap(19, Short.MAX_VALUE))
+    );
+
     javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
     getContentPane().setLayout(layout);
     layout.setHorizontalGroup(
       layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
       .addGroup(layout.createSequentialGroup()
         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+          .addGroup(layout.createSequentialGroup()
+            .addGap(181, 181, 181)
+            .addComponent(jLabel1)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+              .addComponent(expendency, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 274, javax.swing.GroupLayout.PREFERRED_SIZE)
+              .addComponent(lifeExpendency, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)))
           .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
           .addGroup(layout.createSequentialGroup()
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
               .addGroup(layout.createSequentialGroup()
-                .addGap(52, 52, 52)
-                .addComponent(jLabel1))
+                .addGap(473, 473, 473)
+                .addComponent(Next, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
               .addGroup(layout.createSequentialGroup()
-                .addGap(94, 94, 94)
-                .addComponent(expendency, javax.swing.GroupLayout.PREFERRED_SIZE, 274, javax.swing.GroupLayout.PREFERRED_SIZE))
-              .addGroup(layout.createSequentialGroup()
-                .addGap(154, 154, 154)
-                .addComponent(lifeExpendency, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE))
-              .addGroup(layout.createSequentialGroup()
-                .addGap(138, 138, 138)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-              .addGroup(layout.createSequentialGroup()
-                .addGap(323, 323, 323)
-                .addComponent(Next, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(227, 227, 227)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
             .addGap(0, 0, Short.MAX_VALUE)))
         .addContainerGap())
+      .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+        .addGap(0, 0, Short.MAX_VALUE)
+        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        .addGap(122, 122, 122))
     );
     layout.setVerticalGroup(
       layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
       .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+        .addContainerGap()
         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
           .addComponent(jLabel1)
           .addGroup(layout.createSequentialGroup()
             .addComponent(expendency)
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+            .addGap(0, 0, 0)
             .addComponent(lifeExpendency)))
-        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
+        .addGap(0, 0, 0)
         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+        .addGap(36, 36, 36)
         .addComponent(Next)
-        .addGap(28, 28, 28))
+        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
     );
 
     pack();
@@ -224,6 +252,7 @@ public class InvestmentForm extends javax.swing.JFrame {
    * @param args the command line arguments
    */
   public static void main(String args[]) {
+
     /* Set the Nimbus look and feel */
     //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
     /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -260,6 +289,7 @@ public class InvestmentForm extends javax.swing.JFrame {
   }
 
   // Variables declaration - do not modify//GEN-BEGIN:variables
+  private javax.swing.JLabel LifeTime;
   private javax.swing.JButton Next;
   private javax.swing.JTextField currentAge;
   private javax.swing.JTextField currentAge1;
@@ -272,6 +302,7 @@ public class InvestmentForm extends javax.swing.JFrame {
   private javax.swing.JLabel jLabel6;
   private javax.swing.JPanel jPanel1;
   private javax.swing.JPanel jPanel2;
+  private javax.swing.JPanel jPanel3;
   private javax.swing.JLabel lifeExpendency;
   // End of variables declaration//GEN-END:variables
 }
