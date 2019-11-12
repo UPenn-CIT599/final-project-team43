@@ -67,10 +67,4 @@ public class LifeExpectancy {
 		return result;
 	}
 	
-	public static void main(String[] args) {
-		LifeExpectancy le = new LifeExpectancy("rate_sample.csv");
-		System.out.println(le.calculateEx("Male",0));
-		System.out.println(le.calculateEx("Female",0));
-	}
-
 }
