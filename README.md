@@ -5,6 +5,7 @@ TEAM MEMBERS
 * Le, Thi Bich Ngoc (Vy)
 * Li, Songqi (Sally)
 * Zhang, Haotian (Evan)
+
 PROJECT IDEA AND DESCRIPTION
 The program will have two main sections:
 ### 1) Calculating the life expectancy
