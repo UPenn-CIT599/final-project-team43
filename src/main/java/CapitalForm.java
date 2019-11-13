@@ -1,5 +1,4 @@
 
-
 /*
  * Copyright 2019 sally.
  *
@@ -19,12 +18,12 @@
  *
  * @author sally
  */
-public class InvestmentForm extends javax.swing.JFrame {
+public class CapitalForm extends javax.swing.JFrame {
 
   /**
    * Creates new form NewJFrame
    */
-  public InvestmentForm(double expendency) {
+  public CapitalForm(double expendency) {
     initComponents();
     LifeTime.setText(String.valueOf("Your life expectancy is " + expendency + " years"));
 
@@ -167,8 +166,8 @@ public class InvestmentForm extends javax.swing.JFrame {
       jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
       .addGroup(jPanel3Layout.createSequentialGroup()
         .addGap(111, 111, 111)
-        .addComponent(LifeTime, javax.swing.GroupLayout.PREFERRED_SIZE, 476, javax.swing.GroupLayout.PREFERRED_SIZE)
-        .addContainerGap(62, Short.MAX_VALUE))
+        .addComponent(LifeTime, javax.swing.GroupLayout.PREFERRED_SIZE, 549, javax.swing.GroupLayout.PREFERRED_SIZE)
+        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
     );
     jPanel3Layout.setVerticalGroup(
       jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -232,7 +231,9 @@ public class InvestmentForm extends javax.swing.JFrame {
   }// </editor-fold>//GEN-END:initComponents
 
   private void NextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NextActionPerformed
-    // ODO add your handling code here:
+    //CapitalCalculator c = new CapitalCalculator(25, 65, 100, 3000, 5000);
+    //c.calMinYieldYearly();
+    //ArrayList<CapitalSeries> capitalSeries = c.calCapitalSeries(3000, 5000);
 
   }//GEN-LAST:event_NextActionPerformed
 
@@ -266,14 +267,18 @@ public class InvestmentForm extends javax.swing.JFrame {
         }
       }
     } catch (ClassNotFoundException ex) {
-      java.util.logging.Logger.getLogger(InvestmentForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+      java.util.logging.Logger.getLogger(CapitalForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
     } catch (InstantiationException ex) {
-      java.util.logging.Logger.getLogger(InvestmentForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+      java.util.logging.Logger.getLogger(CapitalForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
     } catch (IllegalAccessException ex) {
-      java.util.logging.Logger.getLogger(InvestmentForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+      java.util.logging.Logger.getLogger(CapitalForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
     } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-      java.util.logging.Logger.getLogger(InvestmentForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+      java.util.logging.Logger.getLogger(CapitalForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
     }
+    //</editor-fold>
+    //</editor-fold>
+    //</editor-fold>
+    //</editor-fold>
     //</editor-fold>
     //</editor-fold>
     //</editor-fold>

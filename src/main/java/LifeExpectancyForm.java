@@ -3,7 +3,7 @@
  *
  * @author sally
  */
-public class LifeExpendencyForm extends javax.swing.JFrame {
+public class LifeExpectancyForm extends javax.swing.JFrame {
 
   private double expendency;
 
@@ -14,7 +14,7 @@ public class LifeExpendencyForm extends javax.swing.JFrame {
   /**
    * Creates new form NewJFrame
    */
-  public LifeExpendencyForm() {
+  public LifeExpectancyForm() {
     initComponents();
   }
 
@@ -159,7 +159,7 @@ public class LifeExpendencyForm extends javax.swing.JFrame {
     // ODO add your handling code here:
     LifeExpectancy le = new LifeExpectancy("rate_sample.csv");
     expendency = le.calculateEx(gender.getSelectedItem().toString(), Integer.valueOf(currentAge.getText()));
-    InvestmentForm newJFrame2 = new InvestmentForm(expendency);
+    CapitalForm newJFrame2 = new CapitalForm(expendency);
     newJFrame2.setVisible(true);
 
   }//GEN-LAST:event_NextActionPerformed
@@ -189,21 +189,23 @@ public class LifeExpendencyForm extends javax.swing.JFrame {
         }
       }
     } catch (ClassNotFoundException ex) {
-      java.util.logging.Logger.getLogger(LifeExpendencyForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+      java.util.logging.Logger.getLogger(LifeExpectancyForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
     } catch (InstantiationException ex) {
-      java.util.logging.Logger.getLogger(LifeExpendencyForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+      java.util.logging.Logger.getLogger(LifeExpectancyForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
     } catch (IllegalAccessException ex) {
-      java.util.logging.Logger.getLogger(LifeExpendencyForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+      java.util.logging.Logger.getLogger(LifeExpectancyForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
     } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-      java.util.logging.Logger.getLogger(LifeExpendencyForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+      java.util.logging.Logger.getLogger(LifeExpectancyForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
     }
+    //</editor-fold>
+    //</editor-fold>
     //</editor-fold>
     //</editor-fold>
 
     /* Create and display the form */
     java.awt.EventQueue.invokeLater(new Runnable() {
       public void run() {
-        new LifeExpendencyForm().setVisible(true);
+        new LifeExpectancyForm().setVisible(true);
       }
     });
 
