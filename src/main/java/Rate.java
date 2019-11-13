@@ -1,3 +1,7 @@
+/**
+ *
+ * @author vy
+ */
 
 public class Rate {
 	
