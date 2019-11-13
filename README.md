@@ -26,3 +26,5 @@ expectancy calculator, associated JUnit testing
 *  Evan: retirement plan calculator & data analysis, portfolio recommendation,
 associated JUnit testing
 * Sally: GUI(Swing), Event Listener, integration with other classes, JUnit testing,
+
+Check Final Project Flow Chart
