@@ -7,6 +7,7 @@ TEAM MEMBERS
 * Zhang, Haotian (Evan)
 
 PROJECT IDEA AND DESCRIPTION
+
 The program will have two main sections:
 ### 1) Calculating the life expectancy
 *  Ask the user inputs for their age and gender and potential other characteristics
