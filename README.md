@@ -29,4 +29,5 @@ expectancy calculator, associated JUnit testing
 associated JUnit testing
 * Sally: GUI(Swing), Event Listener, integration with other classes, JUnit testing,
 
-Check Final Project Flow Chart
+### Check Final Project Flow Chart
+![Final Project Flow Chart](./FinalProjectFlowChart.jpg)
