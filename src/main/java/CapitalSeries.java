@@ -1,7 +1,7 @@
+package main.java;
 
-import java.sql.Timestamp;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
+import java.time.*;
+import java.time.format.DateTimeFormatter;
 
 /**
  * store one capital series unit
@@ -11,45 +11,66 @@ import java.util.Calendar;
  */
 public class CapitalSeries {
 
-  Timestamp date;
-  int capital;
+  LocalDateTime date;
+  double capital;
+  String dateStr;
 
   /**
    * store capital units each month
    *
-   * @param date
-   * @param capital
+   * @param date(2018-05-12 08:30:30)
+   * @param d
+   * @param dateStr(20180512) 
    */
-  public CapitalSeries(String date, int capital) {
-    this.date = dateToStamp(date);
-    this.capital = capital;
+  public CapitalSeries(String date, double d) {
+    this.date = parseDate(date);
+    this.capital = d;
+    this.dateStr = date;
+    
   }
 
   /**
-   * parase a string into timestamp
+   * parase a string into LocalDateTime
    *
    * @param s
    * @return
    */
-  public static Timestamp dateToStamp(String s) {
-    Calendar calendar = Calendar.getInstance(); // 19890926
-    SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-    String nowtime = format.format(calendar.getTime());
-    Timestamp timestamp = Timestamp.valueOf(nowtime);
-
-    SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-    String res = "";
+  public static LocalDateTime parseDate(String s) {
+	
+	DateTimeFormatter formatDataTime = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+	DateTimeFormatter formatDate = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+	DateTimeFormatter formatTime = DateTimeFormatter.ofPattern("HH:mm:ss");
+	
+//	LocalDateTime localDateTime1 = LocalDateTime.now();
+	LocalDateTime localDateTime = LocalDateTime.of(Integer.parseInt(s.substring(0, 4)), 
+			Integer.parseInt(s.substring(4, 6)), 
+			Integer.parseInt(s.substring(6, 8)), 0, 0);
+	
+	String formatDataTimeStr = localDateTime.format(formatDataTime);
+	String formatDateStr = localDateTime.format(formatDate);
+	String formatTimeStr = localDateTime.format(formatTime);
+	
+	
+//	LocalDateTime time1 = LocalDateTime.parse(s+ " 08:30:30", formatDate);
+//	LocalDateTime time2 = LocalDateTime.parse("2018-04-20 16:30:30", formatDataTime);
+	
+	LocalDateTime res = null;
     if (!"".equals(s)) {
       try {
-        res = String.valueOf(sdf.parse(s).getTime() / 1000);
+        res = localDateTime;
       } catch (Exception e) {
         System.out.println("null detected");
       }
     } else {
-      long time = System.currentTimeMillis();
-      res = String.valueOf(time / 1000);
+      LocalDateTime time = LocalDateTime.now();
+      res = time;
     }
 
-    return timestamp;
+    return res;
+  }
+  
+  @Override
+  public String toString() {
+	  return this.dateStr;
   }
 }
