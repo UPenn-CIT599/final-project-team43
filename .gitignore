@@ -12,3 +12,5 @@ nb-configuration.xml
 *.iml
 .DS_Store
 *.form
+/bin/
+/bin/
