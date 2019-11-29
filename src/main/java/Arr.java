@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2019 sally.
  *
@@ -14,14 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 /**
  *
  * @author sally
  */
-public interface CalculatorInterface {
+public class Arr {
 
-  public int calculate(String gender, int age);
-
-  public int investment(int retirementAge, int revenue, int fee);
+  Arr() {
+    throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+  }
 
 }

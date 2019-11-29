@@ -159,7 +159,7 @@ public class LifeExpectancyForm extends javax.swing.JFrame {
     // ODO add your handling code here:
     LifeExpectancy le = new LifeExpectancy("rate_sample.csv");
     expendency = le.calculateEx(gender.getSelectedItem().toString(), Integer.valueOf(currentAge.getText()));
-    CapitalForm newJFrame2 = new CapitalForm(expendency);
+    CapitalForm newJFrame2 = new CapitalForm(expendency, Integer.valueOf(currentAge.getText()));
     newJFrame2.setVisible(true);
 
   }//GEN-LAST:event_NextActionPerformed

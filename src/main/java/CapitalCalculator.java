@@ -1,4 +1,3 @@
-package main.java;
 
 import java.util.ArrayList;
 
@@ -23,8 +22,8 @@ public class CapitalCalculator {
    * @param currentAge
    * @param expectedRetirementAge
    * @param expectedLongevity
-   * @param savingMonthly
-   * @param revenueMonthly
+   * @param savingYearly
+   * @param revenueYearly
    */
   public CapitalCalculator(int currentAge, int expectedRetirementAge, int expectedLongevity,
           int savingYearly, int revenueYearly) {
@@ -42,14 +41,14 @@ public class CapitalCalculator {
    * @return
    */
   public double calFV(int capitalYearly, double rate, int duration) {
-	double FV = capitalYearly * (Math.pow(1+rate,duration)-1)/rate;
+    double FV = capitalYearly * (Math.pow(1 + rate, duration) - 1) / rate;
 //	System.out.println(FV);
     return (double) FV;
   }
 
   /**
-   * calculate minimal yield per year by set present value of saving and
-   * basic algorithm: iterations with accurateness 0.001
+   * calculate minimal yield per year by set present value of saving and basic algorithm: iterations
+   * with accurateness 0.001
    *
    * @return Minimal Yield Yearly
    */
@@ -57,12 +56,12 @@ public class CapitalCalculator {
     //TODO: use for loop to determine the close rate
     double rate = 1;
     double PVRevenue = this.yearsOfRetirement * this.targetYearlyRevenue;
-    for(double i=0.0001; i<rate; i+=0.0001) {
-        double PVSaving = calFV(this.targetYearlySaving, i, this.yearsOfSaving);
-        if(PVRevenue - PVSaving < 0) {
-        	// relative error is less than 1%%
-        	return i;
-        }
+    for (double i = 0.0001; i < rate; i += 0.0001) {
+      double PVSaving = calFV(this.targetYearlySaving, i, this.yearsOfSaving);
+      if (PVRevenue - PVSaving < 0) {
+        // relative error is less than 1%%
+        return i;
+      }
     }
     return rate;
   }
@@ -79,12 +78,12 @@ public class CapitalCalculator {
     capitalSeries = new ArrayList<CapitalSeries>();
     int year;
     double currentSaving = 0;
-    
-    for(int i=1;i<=this.yearsOfSaving;i++) {
-    	year = (2019 + i);
-    	currentSaving += savingYearly * Math.pow(1+yearlyIntRate, i);
-    	capitalSeries.add(new CapitalSeries(year+"0105", currentSaving * (1+yearlyIntRate)));
-    	System.out.println(currentSaving);
+
+    for (int i = 1; i <= this.yearsOfSaving; i++) {
+      year = (2019 + i);
+      currentSaving += savingYearly * Math.pow(1 + yearlyIntRate, i);
+      capitalSeries.add(new CapitalSeries(year + "0105", currentSaving * (1 + yearlyIntRate)));
+      System.out.println(currentSaving);
     }
     return capitalSeries;
   }
@@ -95,7 +94,7 @@ public class CapitalCalculator {
    * @param args
    */
   public static void main(String[] args) {
-	  
+
     CapitalCalculator c = new CapitalCalculator(25, 65, 100, 30000, 48000);
     System.out.println(c.calMinYieldYearly());
     double yearlyIntRate = c.calMinYieldYearly();
