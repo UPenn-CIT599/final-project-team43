@@ -1,4 +1,7 @@
 
+import java.util.ArrayList;
+
+
 /*
  * Copyright 2019 sally.
  *
@@ -20,12 +23,20 @@
  */
 public class CapitalForm extends javax.swing.JFrame {
 
+  int currentAge;
+  double expectedLongevity;
+
   /**
    * Creates new form NewJFrame
+   *
+   * @param expectancy
+   * @param currentAge
    */
-  public CapitalForm(double expendency) {
+  public CapitalForm(double expectancy, int currentAge) {
     initComponents();
-    LifeTime.setText(String.valueOf("Your life expectancy is " + expendency + " years"));
+    this.currentAge = currentAge;
+    this.expectedLongevity = expectancy;
+    LifeTime.setText(String.valueOf("Your life expectancy is " + this.expectedLongevity + " years"));
 
   }
 
@@ -38,7 +49,7 @@ public class CapitalForm extends javax.swing.JFrame {
   private void initComponents() {
 
     lifeExpendency = new javax.swing.JLabel();
-    expendency = new javax.swing.JLabel();
+    expectancy = new javax.swing.JLabel();
     Next = new javax.swing.JButton();
     jLabel1 = new javax.swing.JLabel();
     jPanel1 = new javax.swing.JPanel();
@@ -47,9 +58,9 @@ public class CapitalForm extends javax.swing.JFrame {
     jLabel2 = new javax.swing.JLabel();
     jLabel3 = new javax.swing.JLabel();
     jLabel5 = new javax.swing.JLabel();
-    currentAge = new javax.swing.JTextField();
-    currentAge1 = new javax.swing.JTextField();
-    currentAge2 = new javax.swing.JTextField();
+    retirementAge = new javax.swing.JTextField();
+    yearlyRevenue = new javax.swing.JTextField();
+    yealyFee = new javax.swing.JTextField();
     jPanel3 = new javax.swing.JPanel();
     LifeTime = new javax.swing.JLabel();
 
@@ -90,26 +101,26 @@ public class CapitalForm extends javax.swing.JFrame {
     jLabel2.setText("Retirement Age");
 
     jLabel3.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
-    jLabel3.setText("Target Monthly Revenue");
+    jLabel3.setText("Target Yearly Revenue");
 
     jLabel5.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
-    jLabel5.setText("Monthly Fee");
+    jLabel5.setText("Yearly Fee");
 
-    currentAge.addActionListener(new java.awt.event.ActionListener() {
+    retirementAge.addActionListener(new java.awt.event.ActionListener() {
       public void actionPerformed(java.awt.event.ActionEvent evt) {
-        currentAgeActionPerformed(evt);
+        retirementAgeActionPerformed(evt);
       }
     });
 
-    currentAge1.addActionListener(new java.awt.event.ActionListener() {
+    yearlyRevenue.addActionListener(new java.awt.event.ActionListener() {
       public void actionPerformed(java.awt.event.ActionEvent evt) {
-        currentAge1ActionPerformed(evt);
+        yearlyRevenueActionPerformed(evt);
       }
     });
 
-    currentAge2.addActionListener(new java.awt.event.ActionListener() {
+    yealyFee.addActionListener(new java.awt.event.ActionListener() {
       public void actionPerformed(java.awt.event.ActionEvent evt) {
-        currentAge2ActionPerformed(evt);
+        yealyFeeActionPerformed(evt);
       }
     });
 
@@ -132,12 +143,12 @@ public class CapitalForm extends javax.swing.JFrame {
               .addGroup(jPanel2Layout.createSequentialGroup()
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 101, Short.MAX_VALUE)
-                .addComponent(currentAge, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(retirementAge, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
               .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                  .addComponent(currentAge2, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                  .addComponent(currentAge1, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                  .addComponent(yealyFee, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                  .addComponent(yearlyRevenue, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))))
             .addGap(61, 61, 61))))
     );
     jPanel2Layout.setVerticalGroup(
@@ -146,15 +157,15 @@ public class CapitalForm extends javax.swing.JFrame {
         .addGap(15, 15, 15)
         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
           .addComponent(jLabel2)
-          .addComponent(currentAge, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+          .addComponent(retirementAge, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
         .addGap(8, 8, 8)
         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
           .addComponent(jLabel3)
-          .addComponent(currentAge1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+          .addComponent(yearlyRevenue, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
         .addGap(18, 18, 18)
         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
           .addComponent(jLabel5)
-          .addComponent(currentAge2, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+          .addComponent(yealyFee, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
     );
 
@@ -188,7 +199,7 @@ public class CapitalForm extends javax.swing.JFrame {
             .addComponent(jLabel1)
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-              .addComponent(expendency, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 274, javax.swing.GroupLayout.PREFERRED_SIZE)
+              .addComponent(expectancy, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 274, javax.swing.GroupLayout.PREFERRED_SIZE)
               .addComponent(lifeExpendency, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)))
           .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
           .addGroup(layout.createSequentialGroup()
@@ -217,7 +228,7 @@ public class CapitalForm extends javax.swing.JFrame {
         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
           .addComponent(jLabel1)
           .addGroup(layout.createSequentialGroup()
-            .addComponent(expendency)
+            .addComponent(expectancy)
             .addGap(0, 0, 0)
             .addComponent(lifeExpendency)))
         .addGap(0, 0, 0)
@@ -231,23 +242,26 @@ public class CapitalForm extends javax.swing.JFrame {
   }// </editor-fold>//GEN-END:initComponents
 
   private void NextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NextActionPerformed
-    //CapitalCalculator c = new CapitalCalculator(25, 65, 100, 3000, 5000);
-    //c.calMinYieldYearly();
-    //ArrayList<CapitalSeries> capitalSeries = c.calCapitalSeries(3000, 5000);
+
+    CapitalCalculator c = new CapitalCalculator(currentAge, Integer.valueOf(retirementAge.getText()), (int) expectedLongevity, Integer.valueOf(yealyFee.getText()), Integer.valueOf(yearlyRevenue.getText()));
+    System.out.println(c.calMinYieldYearly());
+    double yearlyIntRate = c.calMinYieldYearly();
+    ArrayList<CapitalSeries> capitalSeries = c.calCapitalSeries(Integer.valueOf(yearlyRevenue.getText()), yearlyIntRate);
+    System.out.println(capitalSeries);
 
   }//GEN-LAST:event_NextActionPerformed
 
-  private void currentAgeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_currentAgeActionPerformed
+  private void retirementAgeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_retirementAgeActionPerformed
     // TODO add your handling code here:
-  }//GEN-LAST:event_currentAgeActionPerformed
+  }//GEN-LAST:event_retirementAgeActionPerformed
 
-  private void currentAge1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_currentAge1ActionPerformed
+  private void yearlyRevenueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yearlyRevenueActionPerformed
     // TODO add your handling code here:
-  }//GEN-LAST:event_currentAge1ActionPerformed
+  }//GEN-LAST:event_yearlyRevenueActionPerformed
 
-  private void currentAge2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_currentAge2ActionPerformed
+  private void yealyFeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yealyFeeActionPerformed
     // TODO add your handling code here:
-  }//GEN-LAST:event_currentAge2ActionPerformed
+  }//GEN-LAST:event_yealyFeeActionPerformed
 
   /**
    * @param args the command line arguments
@@ -296,10 +310,7 @@ public class CapitalForm extends javax.swing.JFrame {
   // Variables declaration - do not modify//GEN-BEGIN:variables
   private javax.swing.JLabel LifeTime;
   private javax.swing.JButton Next;
-  private javax.swing.JTextField currentAge;
-  private javax.swing.JTextField currentAge1;
-  private javax.swing.JTextField currentAge2;
-  private javax.swing.JLabel expendency;
+  private javax.swing.JLabel expectancy;
   private javax.swing.JLabel jLabel1;
   private javax.swing.JLabel jLabel2;
   private javax.swing.JLabel jLabel3;
@@ -309,5 +320,8 @@ public class CapitalForm extends javax.swing.JFrame {
   private javax.swing.JPanel jPanel2;
   private javax.swing.JPanel jPanel3;
   private javax.swing.JLabel lifeExpendency;
+  private javax.swing.JTextField retirementAge;
+  private javax.swing.JTextField yealyFee;
+  private javax.swing.JTextField yearlyRevenue;
   // End of variables declaration//GEN-END:variables
 }

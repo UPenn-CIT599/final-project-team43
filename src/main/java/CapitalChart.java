@@ -1,11 +1,8 @@
-package main.java;
 
 import java.util.ArrayList;
-
 import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
 import javax.swing.WindowConstants;
-
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
@@ -13,21 +10,24 @@ import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.data.xy.XYDataset;
 import org.jfree.data.xy.XYSeries;
 import org.jfree.data.xy.XYSeriesCollection;
+
 /**
  * display the chart of capital flows in line charts
  *
  * @author Haotian Zhang
  *
  */
-public class CapitalChart extends JFrame{
-	 private static final long serialVersionUID = 6294689542092367723L;
+public class CapitalChart extends JFrame {
 
-	 public CapitalChart(String title) {
-	    super(title);
+  private static final long serialVersionUID = 6294689542092367723L;
 
-	    // Create dataset
-	    XYDataset dataset = createDataset();
+  public CapitalChart(String title) {
+    super(title);
 
+    // Create dataset
+    XYDataset dataset = createDataset();
+
+<<<<<<< HEAD
 	    // Create chart
 	    JFreeChart chart = ChartFactory.createXYLineChart(
 	        "Capital Seires",
@@ -36,15 +36,26 @@ public class CapitalChart extends JFrame{
 	        dataset,
 	        PlotOrientation.VERTICAL,
 	        true, true, false);
+=======
+    // Create chart
+    JFreeChart chart = ChartFactory.createXYLineChart(
+            "XY Line Chart Example",
+            "X-Axis",
+            "Y-Axis",
+            dataset,
+            PlotOrientation.VERTICAL,
+            true, true, false);
+>>>>>>> f5093d3d777ac9aadbd06742f3d855a88620576f
 
-	    // Create Panel
-	    ChartPanel panel = new ChartPanel(chart);
-	    setContentPane(panel);
-	  }
+    // Create Panel
+    ChartPanel panel = new ChartPanel(chart);
+    setContentPane(panel);
+  }
 
-	  private XYDataset createDataset() {
-	    XYSeriesCollection dataset = new XYSeriesCollection();
+  private XYDataset createDataset() {
+    XYSeriesCollection dataset = new XYSeriesCollection();
 
+<<<<<<< HEAD
 	    CapitalCalculator c = new CapitalCalculator(25, 65, 100, 30000, 48000);
 	    System.out.println(c.calMinYieldYearly());
 	    double yearlyIntRate = c.calMinYieldYearly();
@@ -54,6 +65,17 @@ public class CapitalChart extends JFrame{
 	    for (CapitalSeries CapitalSerie : capitalSeries) {
 	    	series.add(Integer.parseInt(CapitalSerie.dateStr.substring(0,4)), CapitalSerie.capital);
 	    }
+=======
+    CapitalCalculator c = new CapitalCalculator(25, 65, 100, 30000, 48000);
+    System.out.println(c.calMinYieldYearly());
+    double yearlyIntRate = c.calMinYieldYearly();
+    ArrayList<CapitalSeries> capitalSeries = c.calCapitalSeries(30000, yearlyIntRate);
+
+    XYSeries series = new XYSeries("Capital Series");
+    for (CapitalSeries CapitalSerie : capitalSeries) {
+      series.add(Integer.parseInt(CapitalSerie.dateStr.substring(0, 4)), CapitalSerie.capital);
+    }
+>>>>>>> f5093d3d777ac9aadbd06742f3d855a88620576f
 //	    series.add(2, 4);
 //	    series.add(8, 10);
 //	    series.add(10, 12);
@@ -62,12 +84,10 @@ public class CapitalChart extends JFrame{
 //	    series.add(18, 20);
 //	    series.add(21, 23);
 
-	    //Add series to dataset
-	    dataset.addSeries(series);
-	    
-	    return dataset;
-	  }
+    //Add series to dataset
+    dataset.addSeries(series);
 
+<<<<<<< HEAD
 	  public static void main(String[] args) {
 	    SwingUtilities.invokeLater(() -> {
 	    	CapitalChart example = new CapitalChart("Capital Series");
@@ -78,4 +98,18 @@ public class CapitalChart extends JFrame{
 	    });
 	  }
 }
+=======
+    return dataset;
+  }
+>>>>>>> f5093d3d777ac9aadbd06742f3d855a88620576f
 
+  public static void main(String[] args) {
+    SwingUtilities.invokeLater(() -> {
+      CapitalChart example = new CapitalChart("XY Chart Example | BORAJI.COM");
+      example.setSize(800, 400);
+      example.setLocationRelativeTo(null);
+      example.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+      example.setVisible(true);
+    });
+  }
+}

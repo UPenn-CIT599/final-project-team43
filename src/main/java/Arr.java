@@ -1,4 +1,3 @@
-package main.java;
 /*
  * Copyright 2019 sally.
  *
@@ -15,26 +14,14 @@ package main.java;
  * limitations under the License.
  */
 
-
 /**
  *
  * @author sally
  */
-public class TestCalculator {
+public class Arr {
 
-  private String gender;
-  private int age;
-
-  public TestCalculator(String gender, int age) {
-    this.gender = gender;
-    this.age = age;
+  Arr() {
+    throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
   }
 
-  public int calculate() {
-    if (gender.equals("Male")) {
-      return 1 + age;
-    } else {
-      return 2 + age;
-    }
-  }
 }
