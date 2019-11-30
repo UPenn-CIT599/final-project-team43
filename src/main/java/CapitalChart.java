@@ -30,7 +30,7 @@ public class CapitalChart extends JFrame{
 
 	    // Create chart
 	    JFreeChart chart = ChartFactory.createXYLineChart(
-	        "XY Line Chart Example",
+	        "Capital Seires",
 	        "X-Axis",
 	        "Y-Axis",
 	        dataset,
@@ -50,7 +50,7 @@ public class CapitalChart extends JFrame{
 	    double yearlyIntRate = c.calMinYieldYearly();
 	    ArrayList<CapitalSeries> capitalSeries = c.calCapitalSeries(30000, yearlyIntRate);
 	    
-	    XYSeries series = new XYSeries("Capital Series");
+	    XYSeries series = new XYSeries("Capital Series: Your Min Rate should be " + yearlyIntRate);
 	    for (CapitalSeries CapitalSerie : capitalSeries) {
 	    	series.add(Integer.parseInt(CapitalSerie.dateStr.substring(0,4)), CapitalSerie.capital);
 	    }
@@ -70,7 +70,7 @@ public class CapitalChart extends JFrame{
 
 	  public static void main(String[] args) {
 	    SwingUtilities.invokeLater(() -> {
-	    	CapitalChart example = new CapitalChart("XY Chart Example | BORAJI.COM");
+	    	CapitalChart example = new CapitalChart("Capital Series");
 	      example.setSize(800, 400);
 	      example.setLocationRelativeTo(null);
 	      example.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
