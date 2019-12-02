@@ -1,6 +1,6 @@
 /**
  *
- * @author vy
+ * @author Ngoc (Vy) Le
  */
 
 import java.text.DecimalFormat;
@@ -23,7 +23,7 @@ public class LifeExpectancy {
 	 * @param CurrentAge
 	 * @return life expectancy with 1 decimal
 	 */
-	public double calculateEx(String gender, int currentAge) {
+	public int calculateEx(String gender, int currentAge) {
 		double ex = 0.0;
 		
 		ArrayList<Rate> rates;
@@ -42,14 +42,14 @@ public class LifeExpectancy {
 		
 		DecimalFormat f = new DecimalFormat("##.0");
 		String formate = f.format(ex);
-		double finalValue = 0.0;
+		int finalValue = 0;
 		try {
-			finalValue = (Double)f.parse(formate);
+			finalValue = (Integer)f.parse(formate);
 		} catch (ParseException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return finalValue-0.5;
+		return finalValue;
 	}
 	
 	/**

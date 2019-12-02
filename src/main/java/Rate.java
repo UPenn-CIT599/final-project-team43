@@ -1,6 +1,6 @@
 /**
  *
- * @author vy
+ * @author Ngoc (Vy) Le
  */
 
 public class Rate {
