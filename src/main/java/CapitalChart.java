@@ -20,6 +20,29 @@ import org.jfree.data.xy.XYSeriesCollection;
 public class CapitalChart extends JFrame {
 
   private static final long serialVersionUID = 6294689542092367723L;
+  int currentAge;
+  int expectedRetirementAge;
+  int expectedLongevity;
+  int targetYearlyRevenue;
+  int targetYearlySaving;
+
+  /**
+   * Constructor: five variables of integers
+   *
+   * @param currentAge
+   * @param expectedRetirementAge
+   * @param expectedLongevity
+   * @param savingYearly
+   * @param revenueYearly
+   */
+  public CapitalCalculator(int currentAge, int expectedRetirementAge, int expectedLongevity,
+          int savingYearly, int revenueYearly) {
+    this.currentAge = currentAge;
+    this.expectedRetirementAge = expectedRetirementAge;
+    this.expectedLongevity = expectedLongevity;
+    this.targetYearlyRevenue = revenueYearly;
+    this.targetYearlySaving = savingYearly;
+  }
 
   public CapitalChart(String title) {
     super(title);
@@ -27,7 +50,7 @@ public class CapitalChart extends JFrame {
     // Create dataset
     XYDataset dataset = createDataset();
 
-<<<<<<< HEAD
+
 	    // Create chart
 	    JFreeChart chart = ChartFactory.createXYLineChart(
 	        "Capital Seires",
@@ -36,16 +59,7 @@ public class CapitalChart extends JFrame {
 	        dataset,
 	        PlotOrientation.VERTICAL,
 	        true, true, false);
-=======
-    // Create chart
-    JFreeChart chart = ChartFactory.createXYLineChart(
-            "XY Line Chart Example",
-            "X-Axis",
-            "Y-Axis",
-            dataset,
-            PlotOrientation.VERTICAL,
-            true, true, false);
->>>>>>> f5093d3d777ac9aadbd06742f3d855a88620576f
+
 
     // Create Panel
     ChartPanel panel = new ChartPanel(chart);
@@ -55,39 +69,28 @@ public class CapitalChart extends JFrame {
   private XYDataset createDataset() {
     XYSeriesCollection dataset = new XYSeriesCollection();
 
-<<<<<<< HEAD
-	    CapitalCalculator c = new CapitalCalculator(25, 65, 100, 30000, 48000);
-	    System.out.println(c.calMinYieldYearly());
-	    double yearlyIntRate = c.calMinYieldYearly();
-	    ArrayList<CapitalSeries> capitalSeries = c.calCapitalSeries(30000, yearlyIntRate);
-	    
-	    XYSeries series = new XYSeries("Capital Series: Your Min Rate should be " + yearlyIntRate);
-	    for (CapitalSeries CapitalSerie : capitalSeries) {
-	    	series.add(Integer.parseInt(CapitalSerie.dateStr.substring(0,4)), CapitalSerie.capital);
-	    }
-=======
-    CapitalCalculator c = new CapitalCalculator(25, 65, 100, 30000, 48000);
+
+    CapitalCalculator c = new CapitalCalculator(this.currentAge,
+                                        this.expectedRetirementAge,	
+                                        this.expectedLongevity,
+                                        this.targetYearlyRevenue,
+                                        this.targetYearlySaving);
     System.out.println(c.calMinYieldYearly());
     double yearlyIntRate = c.calMinYieldYearly();
-    ArrayList<CapitalSeries> capitalSeries = c.calCapitalSeries(30000, yearlyIntRate);
-
-    XYSeries series = new XYSeries("Capital Series");
+    ArrayList<CapitalSeries> capitalSeries = c.calCapitalSeries(this.targetYearlySaving, yearlyIntRate);
+    
+    XYSeries series = new XYSeries("Capital Series: Your Min Rate should be " + yearlyIntRate);
     for (CapitalSeries CapitalSerie : capitalSeries) {
-      series.add(Integer.parseInt(CapitalSerie.dateStr.substring(0, 4)), CapitalSerie.capital);
+    	series.add(Integer.parseInt(CapitalSerie.dateStr.substring(0,4)), CapitalSerie.capital);
     }
->>>>>>> f5093d3d777ac9aadbd06742f3d855a88620576f
-//	    series.add(2, 4);
-//	    series.add(8, 10);
-//	    series.add(10, 12);
-//	    series.add(13, 15);
-//	    series.add(17, 19);
-//	    series.add(18, 20);
-//	    series.add(21, 23);
+
 
     //Add series to dataset
     dataset.addSeries(series);
+    return dataset;
+  }
 
-<<<<<<< HEAD
+
 	  public static void main(String[] args) {
 	    SwingUtilities.invokeLater(() -> {
 	    	CapitalChart example = new CapitalChart("Capital Series");
@@ -98,18 +101,4 @@ public class CapitalChart extends JFrame {
 	    });
 	  }
 }
-=======
-    return dataset;
-  }
->>>>>>> f5093d3d777ac9aadbd06742f3d855a88620576f
 
-  public static void main(String[] args) {
-    SwingUtilities.invokeLater(() -> {
-      CapitalChart example = new CapitalChart("XY Chart Example | BORAJI.COM");
-      example.setSize(800, 400);
-      example.setLocationRelativeTo(null);
-      example.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-      example.setVisible(true);
-    });
-  }
-}

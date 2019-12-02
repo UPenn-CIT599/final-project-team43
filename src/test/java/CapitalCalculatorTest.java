@@ -26,7 +26,7 @@ class CapitalCalculatorTest {
   @Test
   void testcalPV() {
     // the capital with 0 interest should be equal to the initial investment
-    assertEquals(c.calPV(3000, 0), 3000);
+    assertEquals(c.calFV(3000, 0), 3000);
   }
 
   @Test
