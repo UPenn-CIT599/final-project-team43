@@ -87,7 +87,7 @@ public class CapitalCalculator {
     }
     return capitalSeries;
   }
-
+  
   /**
    * Test
    *

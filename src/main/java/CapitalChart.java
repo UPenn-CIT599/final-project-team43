@@ -63,7 +63,7 @@ public class CapitalChart extends JFrame {
 
     // Create Panel
     ChartPanel panel = new ChartPanel(chart);
-    setContentPane(panel);
+    setContentPanel(panel);
   }
 
   private XYDataset createDataset() {
@@ -91,7 +91,7 @@ public class CapitalChart extends JFrame {
   }
 
 
-	  public static void main(String[] args) {
+	  public static void display() {
 	    SwingUtilities.invokeLater(() -> {
 	    	CapitalChart example = new CapitalChart("Capital Series");
 	      example.setSize(800, 400);
