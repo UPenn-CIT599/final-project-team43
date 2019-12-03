@@ -35,7 +35,7 @@ public class CapitalChart extends JFrame {
    * @param savingYearly
    * @param revenueYearly
    */
-  public CapitalCalculator(int currentAge, int expectedRetirementAge, int expectedLongevity,
+  public CapitalChart(int currentAge, int expectedRetirementAge, int expectedLongevity,
           int savingYearly, int revenueYearly) {
     this.currentAge = currentAge;
     this.expectedRetirementAge = expectedRetirementAge;
