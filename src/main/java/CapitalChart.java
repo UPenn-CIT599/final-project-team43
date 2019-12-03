@@ -91,7 +91,7 @@ public class CapitalChart extends JFrame {
   }
 
 
-	  public static void display() {
+	  public void display() {
 	    SwingUtilities.invokeLater(() -> {
 	    	CapitalChart example = new CapitalChart("Capital Series");
 	      example.setSize(800, 400);
