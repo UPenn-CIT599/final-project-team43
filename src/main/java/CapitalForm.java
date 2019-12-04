@@ -6,7 +6,7 @@
 public class CapitalForm extends javax.swing.JFrame {
 
   int currentAge;
-  double expectedLongevity;
+  int expectedLongevity;
 
   /**
    * Creates new form NewJFrame
@@ -14,7 +14,7 @@ public class CapitalForm extends javax.swing.JFrame {
    * @param expectancy
    * @param currentAge
    */
-  public CapitalForm(double expectancy, int currentAge) {
+  public CapitalForm(int expectancy, int currentAge) {
     initComponents();
     this.currentAge = currentAge;
     this.expectedLongevity = expectancy;
@@ -42,7 +42,7 @@ public class CapitalForm extends javax.swing.JFrame {
     jLabel5 = new javax.swing.JLabel();
     retirementAge = new javax.swing.JTextField();
     yearlyRevenue = new javax.swing.JTextField();
-    yealyFee = new javax.swing.JTextField();
+    yealySaving = new javax.swing.JTextField();
     jPanel3 = new javax.swing.JPanel();
     LifeTime = new javax.swing.JLabel();
 
@@ -100,9 +100,9 @@ public class CapitalForm extends javax.swing.JFrame {
       }
     });
 
-    yealyFee.addActionListener(new java.awt.event.ActionListener() {
+    yealySaving.addActionListener(new java.awt.event.ActionListener() {
       public void actionPerformed(java.awt.event.ActionEvent evt) {
-        yealyFeeActionPerformed(evt);
+        yealySavingActionPerformed(evt);
       }
     });
 
@@ -129,7 +129,7 @@ public class CapitalForm extends javax.swing.JFrame {
               .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                  .addComponent(yealyFee, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                  .addComponent(yealySaving, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
                   .addComponent(yearlyRevenue, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))))
             .addGap(61, 61, 61))))
     );
@@ -147,7 +147,7 @@ public class CapitalForm extends javax.swing.JFrame {
         .addGap(18, 18, 18)
         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
           .addComponent(jLabel5)
-          .addComponent(yealyFee, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+          .addComponent(yealySaving, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
     );
 
@@ -225,10 +225,10 @@ public class CapitalForm extends javax.swing.JFrame {
 
   private void NextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NextActionPerformed
 
-    CapitalCalculator c = new CapitalCalculator(currentAge, Integer.valueOf(retirementAge.getText()), (int) expectedLongevity, Integer.valueOf(yealyFee.getText()), Integer.valueOf(yearlyRevenue.getText()));
+    CapitalCalculator c = new CapitalCalculator(currentAge, Integer.valueOf(retirementAge.getText()), (int) expectedLongevity, Integer.valueOf(yealySaving.getText()), Integer.valueOf(yearlyRevenue.getText()));
     System.out.println("This is min interest rate " + c.calMinYieldYearly());
     // double yearlyIntRate = c.calMinYieldYearly();
-    CapitalChart Jchart = new CapitalChart("Capital Series", currentAge, Integer.valueOf(retirementAge.getText()), (int) expectedLongevity, Integer.valueOf(yealyFee.getText()), Integer.valueOf(yearlyRevenue.getText()));
+    CapitalChart Jchart = new CapitalChart("Capital Series", currentAge, Integer.valueOf(retirementAge.getText()), (int) expectedLongevity, Integer.valueOf(yealySaving.getText()), Integer.valueOf(yearlyRevenue.getText()));
     //  ArrayList<CapitalSeries> capitalSeries = c.calCapitalSeries(Integer.valueOf(yearlyRevenue.getText()), yearlyIntRate);
     Jchart.display();
   }//GEN-LAST:event_NextActionPerformed
@@ -241,9 +241,9 @@ public class CapitalForm extends javax.swing.JFrame {
     // TODO add your handling code here:
   }//GEN-LAST:event_yearlyRevenueActionPerformed
 
-  private void yealyFeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yealyFeeActionPerformed
+  private void yealySavingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yealySavingActionPerformed
     // TODO add your handling code here:
-  }//GEN-LAST:event_yealyFeeActionPerformed
+  }//GEN-LAST:event_yealySavingActionPerformed
 
   /**
    * @param args the command line arguments
@@ -303,7 +303,7 @@ public class CapitalForm extends javax.swing.JFrame {
   private javax.swing.JPanel jPanel3;
   private javax.swing.JLabel lifeExpendency;
   private javax.swing.JTextField retirementAge;
-  private javax.swing.JTextField yealyFee;
+  private javax.swing.JTextField yealySaving;
   private javax.swing.JTextField yearlyRevenue;
   // End of variables declaration//GEN-END:variables
 }
