@@ -1,5 +1,3 @@
-package main.java;
-
 
 import java.time.*;
 import java.time.format.DateTimeFormatter;
@@ -21,7 +19,6 @@ public class CapitalSeries {
    *
    * @param date(2018-05-12 08:30:30)
    * @param d
-   * @param dateStr(20180512)
    */
   public CapitalSeries(String date, double d) {
     this.date = parseDate(date);

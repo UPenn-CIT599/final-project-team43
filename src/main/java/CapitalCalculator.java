@@ -1,5 +1,3 @@
-package main.java;
-
 
 import java.util.ArrayList;
 
@@ -89,7 +87,7 @@ public class CapitalCalculator {
     }
     return capitalSeries;
   }
-  
+
   /**
    * Test
    *
