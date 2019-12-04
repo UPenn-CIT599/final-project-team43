@@ -86,7 +86,7 @@ public class CapitalForm extends javax.swing.JFrame {
     jLabel3.setText("Target Yearly Revenue");
 
     jLabel5.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
-    jLabel5.setText("Yearly Fee");
+    jLabel5.setText("Yearly Saving");
 
     retirementAge.addActionListener(new java.awt.event.ActionListener() {
       public void actionPerformed(java.awt.event.ActionEvent evt) {
