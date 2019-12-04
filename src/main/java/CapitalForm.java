@@ -1,19 +1,4 @@
 
-/*
- * Copyright 2019 sally.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
 /**
  *
  * @author sally
@@ -243,10 +228,9 @@ public class CapitalForm extends javax.swing.JFrame {
     CapitalCalculator c = new CapitalCalculator(currentAge, Integer.valueOf(retirementAge.getText()), (int) expectedLongevity, Integer.valueOf(yealyFee.getText()), Integer.valueOf(yearlyRevenue.getText()));
     System.out.println("This is min interest rate " + c.calMinYieldYearly());
     // double yearlyIntRate = c.calMinYieldYearly();
-    CapitalChart Jchart = new CapitalChart(currentAge, Integer.valueOf(retirementAge.getText()), (int) expectedLongevity, Integer.valueOf(yealyFee.getText()), Integer.valueOf(yearlyRevenue.getText()));
+    CapitalChart Jchart = new CapitalChart("Capital Series", currentAge, Integer.valueOf(retirementAge.getText()), (int) expectedLongevity, Integer.valueOf(yealyFee.getText()), Integer.valueOf(yearlyRevenue.getText()));
     //  ArrayList<CapitalSeries> capitalSeries = c.calCapitalSeries(Integer.valueOf(yearlyRevenue.getText()), yearlyIntRate);
     Jchart.display();
-
   }//GEN-LAST:event_NextActionPerformed
 
   private void retirementAgeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_retirementAgeActionPerformed
