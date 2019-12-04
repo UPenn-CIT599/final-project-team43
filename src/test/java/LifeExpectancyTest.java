@@ -1,7 +1,9 @@
-
+/**
+ * @author Ngoc (Vy) Le
+ *
+ */
 
 import static org.junit.jupiter.api.Assertions.*;
-
 import org.junit.jupiter.api.Test;
 
 class LifeExpectancyTest {
@@ -13,8 +15,8 @@ class LifeExpectancyTest {
 		
 		@Test
 		void testCalculateEx() {
-			LifeExpectancy le = new LifeExpectancy("rate_sample.csv");
+			LifeExpectancy le = new LifeExpectancy("rate.csv");
 			System.out.println(le.calculateEx("Male",0));
+			System.out.println(le.calculateEx("Female",0));
 		}
-
 }
