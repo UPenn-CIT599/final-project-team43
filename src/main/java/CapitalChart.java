@@ -1,3 +1,5 @@
+package main.java;
+
 
 import java.util.ArrayList;
 import javax.swing.JFrame;
@@ -35,18 +37,15 @@ public class CapitalChart extends JFrame {
    * @param savingYearly
    * @param revenueYearly
    */
-  public CapitalChart(int currentAge, int expectedRetirementAge, int expectedLongevity,
-          int savingYearly, int revenueYearly) {
+  public CapitalChart(String title, int currentAge, int expectedRetirementAge, 
+		  int expectedLongevity, int savingYearly, int revenueYearly) {
+    super(title);
+    
     this.currentAge = currentAge;
     this.expectedRetirementAge = expectedRetirementAge;
     this.expectedLongevity = expectedLongevity;
     this.targetYearlyRevenue = revenueYearly;
     this.targetYearlySaving = savingYearly;
-  }
-
-  public CapitalChart(String title) {
-    super(title);
-
     // Create dataset
     XYDataset dataset = createDataset();
 
@@ -63,7 +62,7 @@ public class CapitalChart extends JFrame {
 
     // Create Panel
     ChartPanel panel = new ChartPanel(chart);
-    setContentPanel(panel);
+    setContentPane(panel);
   }
 
   private XYDataset createDataset() {
@@ -73,8 +72,9 @@ public class CapitalChart extends JFrame {
     CapitalCalculator c = new CapitalCalculator(this.currentAge,
                                         this.expectedRetirementAge,	
                                         this.expectedLongevity,
-                                        this.targetYearlyRevenue,
-                                        this.targetYearlySaving);
+                                        this.targetYearlySaving,
+                                        this.targetYearlyRevenue);
+    System.out.println(this.currentAge);
     System.out.println(c.calMinYieldYearly());
     double yearlyIntRate = c.calMinYieldYearly();
     ArrayList<CapitalSeries> capitalSeries = c.calCapitalSeries(this.targetYearlySaving, yearlyIntRate);
@@ -90,10 +90,14 @@ public class CapitalChart extends JFrame {
     return dataset;
   }
 
-
-	  public void display() {
+  public void display() {
 	    SwingUtilities.invokeLater(() -> {
-	    	CapitalChart example = new CapitalChart("Capital Series");
+	    	CapitalChart example = new CapitalChart("Capital Series",
+	    			this.currentAge,
+                    this.expectedRetirementAge,	
+                    this.expectedLongevity,
+                    this.targetYearlySaving,
+                    this.targetYearlyRevenue);
 	      example.setSize(800, 400);
 	      example.setLocationRelativeTo(null);
 	      example.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
