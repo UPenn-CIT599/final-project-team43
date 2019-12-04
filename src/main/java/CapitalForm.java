@@ -1,7 +1,4 @@
 
-import java.util.ArrayList;
-
-
 /*
  * Copyright 2019 sally.
  *
@@ -244,10 +241,11 @@ public class CapitalForm extends javax.swing.JFrame {
   private void NextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NextActionPerformed
 
     CapitalCalculator c = new CapitalCalculator(currentAge, Integer.valueOf(retirementAge.getText()), (int) expectedLongevity, Integer.valueOf(yealyFee.getText()), Integer.valueOf(yearlyRevenue.getText()));
-    System.out.println(c.calMinYieldYearly());
-    double yearlyIntRate = c.calMinYieldYearly();
-    ArrayList<CapitalSeries> capitalSeries = c.calCapitalSeries(Integer.valueOf(yearlyRevenue.getText()), yearlyIntRate);
-    System.out.println(capitalSeries);
+    System.out.println("This is min interest rate " + c.calMinYieldYearly());
+    // double yearlyIntRate = c.calMinYieldYearly();
+    CapitalChart Jchart = new CapitalChart(currentAge, Integer.valueOf(retirementAge.getText()), (int) expectedLongevity, Integer.valueOf(yealyFee.getText()), Integer.valueOf(yearlyRevenue.getText()));
+    //  ArrayList<CapitalSeries> capitalSeries = c.calCapitalSeries(Integer.valueOf(yearlyRevenue.getText()), yearlyIntRate);
+    Jchart.display();
 
   }//GEN-LAST:event_NextActionPerformed
 
@@ -301,7 +299,7 @@ public class CapitalForm extends javax.swing.JFrame {
     /* Create and display the form */
     java.awt.EventQueue.invokeLater(new Runnable() {
       public void run() {
-
+        new LifeExpectancyForm().setVisible(true);
       }
     });
 
