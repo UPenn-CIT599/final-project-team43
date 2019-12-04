@@ -5,7 +5,7 @@
  */
 public class LifeExpectancyForm extends javax.swing.JFrame {
 
-  private double expendency;
+  private int expendency;
 
   public double getExpendency() {
     return expendency;
