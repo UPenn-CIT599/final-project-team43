@@ -91,12 +91,4 @@ public class RateReader {
 		return femaleRates;
 	}
 
-
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		RateReader test = new RateReader("rate_sample.csv");
-		System.out.println(test.getFemaleRates());
-		System.out.println(test.getMaleRates());
-	}
-
 }

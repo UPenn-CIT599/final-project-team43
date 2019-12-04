@@ -42,14 +42,14 @@ public class LifeExpectancy {
 		
 		DecimalFormat f = new DecimalFormat("##.0");
 		String formate = f.format(ex);
-		int finalValue = 0;
+		double finalValue = 0;
 		try {
-			finalValue = (Integer)f.parse(formate);
+			finalValue = (Double)f.parse(formate);
 		} catch (ParseException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return finalValue;
+		return (int) finalValue;
 	}
 	
 	/**
@@ -71,5 +71,5 @@ public class LifeExpectancy {
 		}
 		return result;
 	}
-	
+
 }
