@@ -5,10 +5,10 @@
  */
 public class LifeExpectancyForm extends javax.swing.JFrame {
 
-  private int expendency;
+  private int expectancy;
 
-  public double getExpendency() {
-    return expendency;
+  public double getExpectancy() {
+    return expectancy;
   }
 
   /**
@@ -157,15 +157,15 @@ public class LifeExpectancyForm extends javax.swing.JFrame {
 
   private void NextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NextActionPerformed
     // ODO add your handling code here:
-    LifeExpectancy le = new LifeExpectancy("rate_sample.csv");
-    expendency = le.calculateEx(gender.getSelectedItem().toString(), Integer.valueOf(currentAge.getText()));
-    CapitalForm newJFrame2 = new CapitalForm(expendency, Integer.valueOf(currentAge.getText()));
+    LifeExpectancy le = new LifeExpectancy("rate.csv");
+    expectancy = le.calculateEx(gender.getSelectedItem().toString(), Integer.valueOf(currentAge.getText()));
+    CapitalForm newJFrame2 = new CapitalForm(expectancy, Integer.valueOf(currentAge.getText()));
     newJFrame2.setVisible(true);
 
   }//GEN-LAST:event_NextActionPerformed
 
   private void currentAgeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_currentAgeActionPerformed
-    // TODO add your handling code here:
+    // TODO add yo handling code here:
   }//GEN-LAST:event_currentAgeActionPerformed
 
   private void genderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_genderActionPerformed
