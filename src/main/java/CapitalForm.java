@@ -222,8 +222,8 @@ public class CapitalForm extends javax.swing.JFrame {
 
     System.out.println(Integer.valueOf(retirementAge.getSelectedItem().toString()));
     Integer expectedRetirementAge = Integer.valueOf(retirementAge.getSelectedItem().toString());
-
-    CapitalCalculator c = new CapitalCalculator(currentAge, expectedRetirementAge, expectedLongevity, Integer.valueOf(yealySaving.getText()), Integer.valueOf(yearlyRevenue.getText()));
+    int lifeTime = expectedLongevity + currentAge;
+    CapitalCalculator c = new CapitalCalculator(currentAge, expectedRetirementAge, lifeTime, Integer.valueOf(yealySaving.getText()), Integer.valueOf(yearlyRevenue.getText()));
     System.out.println("This is min interest rate " + c.calMinYieldYearly());
     CapitalChart Jchart = new CapitalChart("Capital Series", currentAge, Integer.valueOf(retirementAge.getSelectedItem().toString()), expectedLongevity, Integer.valueOf(yealySaving.getText()), Integer.valueOf(yearlyRevenue.getText()));
 //    //  ArrayList<CapitalSeries> capitalSeries = c.calCapitalSeries(Integer.valueOf(yearlyRevenue.getText()), yearlyIntRate);
