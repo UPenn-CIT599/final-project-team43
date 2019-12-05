@@ -1,4 +1,5 @@
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
@@ -73,8 +74,9 @@ public class CapitalChart extends JFrame {
     System.out.println(c.calMinYieldYearly());
     double yearlyIntRate = c.calMinYieldYearly();
     ArrayList<CapitalSeries> capitalSeries = c.calCapitalSeries(this.targetYearlySaving, yearlyIntRate);
-
-    XYSeries series = new XYSeries("Capital Series: Your Min Rate should be " + yearlyIntRate);
+    
+    
+    XYSeries series = new XYSeries("you need to invest your annual savings with an interest rate of "+ new DecimalFormat("#.##").format(yearlyIntRate*100) +  "% to achieve target retirement savings ");
     for (CapitalSeries CapitalSerie : capitalSeries) {
       series.add(Integer.parseInt(CapitalSerie.dateStr.substring(0, 4)), CapitalSerie.capital);
     }
@@ -86,7 +88,7 @@ public class CapitalChart extends JFrame {
 
   public void display() {
     SwingUtilities.invokeLater(() -> {
-      CapitalChart example = new CapitalChart("Capital Series",
+      CapitalChart example = new CapitalChart("Retirement Savings Illustration",
               this.currentAge,
               this.expectedRetirementAge,
               this.expectedLongevity,
