@@ -114,13 +114,14 @@ public class CapitalForm extends javax.swing.JFrame {
       jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
       .addGroup(jPanel2Layout.createSequentialGroup()
         .addContainerGap()
-        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-          .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-          .addComponent(yearlyRevenue, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-          .addComponent(yealySaving, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-          .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 532, Short.MAX_VALUE)
-          .addComponent(retirementAge, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-          .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+          .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(yealySaving, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 532, Short.MAX_VALUE)
+            .addComponent(yearlyRevenue, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(retirementAge, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE))
+          .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
         .addContainerGap(174, Short.MAX_VALUE))
     );
     jPanel2Layout.setVerticalGroup(
@@ -163,7 +164,7 @@ public class CapitalForm extends javax.swing.JFrame {
           .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         .addContainerGap())
       .addGroup(layout.createSequentialGroup()
-        .addGap(438, 438, 438)
+        .addGap(434, 434, 434)
         .addComponent(Next, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
     );
@@ -188,7 +189,7 @@ public class CapitalForm extends javax.swing.JFrame {
         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
         .addComponent(Next)
-        .addGap(0, 24, Short.MAX_VALUE))
+        .addGap(0, 20, Short.MAX_VALUE))
     );
 
     pack();
@@ -198,24 +199,24 @@ public class CapitalForm extends javax.swing.JFrame {
 
     try {
       Integer ExpectedYealySaving = Integer.valueOf(yealySaving.getText());
-      if (ExpectedYealySaving < 0) {
-        JOptionPane.showMessageDialog(jPanel2, "Please enter the positive number");
+      if (ExpectedYealySaving <= 0) {
+        JOptionPane.showMessageDialog(jPanel2, "Please enter a positive integer value for expected annual savings");
         return;
       }
 
     } catch (Exception e) {
-      JOptionPane.showMessageDialog(jPanel2, "Please enter the right number");
+      JOptionPane.showMessageDialog(jPanel2, "Please enter a positive integer value for expected annual savings");
       return;
     }
 
     try {
       Integer ExpectedYealyRevenue = Integer.valueOf(yearlyRevenue.getText());
-      if (ExpectedYealyRevenue < 0) {
-        JOptionPane.showMessageDialog(jPanel2, "Please enter the positive number");
+      if (ExpectedYealyRevenue <= 0) {
+        JOptionPane.showMessageDialog(jPanel2, "Please enter a positive integer value for target annual retirement income");
         return;
       }
     } catch (Exception e) {
-      JOptionPane.showMessageDialog(jPanel2, "Please enter the right number");
+      JOptionPane.showMessageDialog(jPanel2, "Please enter a positive integer value for target annual retirement income");
       return;
     }
 
