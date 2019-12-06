@@ -1,4 +1,6 @@
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author sally
@@ -18,7 +20,7 @@ public class CapitalForm extends javax.swing.JFrame {
     initComponents();
     this.currentAge = currentAge;
     this.expectedLongevity = expectancy;
-    LifeTime.setText(String.valueOf("Your life expectancy is " + this.expectedLongevity + " years"));
+    LifeTime.setText(String.valueOf("Based on your current age and gender, your life expectancy is age " + this.expectedLongevity + " We will use this in the calculation of your retirement savings."));
 
   }
 
@@ -43,7 +45,6 @@ public class CapitalForm extends javax.swing.JFrame {
     yearlyRevenue = new javax.swing.JTextField();
     yealySaving = new javax.swing.JTextField();
     retirementAge = new javax.swing.JComboBox<>();
-    jPanel3 = new javax.swing.JPanel();
     LifeTime = new javax.swing.JLabel();
 
     setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -68,8 +69,8 @@ public class CapitalForm extends javax.swing.JFrame {
       jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
       .addGroup(jPanel1Layout.createSequentialGroup()
         .addGap(111, 111, 111)
-        .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        .addGap(94, 94, 94))
+        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 778, javax.swing.GroupLayout.PREFERRED_SIZE)
+        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
     );
     jPanel1Layout.setVerticalGroup(
       jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -83,10 +84,10 @@ public class CapitalForm extends javax.swing.JFrame {
     jLabel2.setText("Retirement Age");
 
     jLabel3.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
-    jLabel3.setText("Target Yearly Revenue");
+    jLabel3.setText("What would you like to set as your target annual retirement income?");
 
     jLabel5.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
-    jLabel5.setText("Yealy Expected Savings");
+    jLabel5.setText("What is your expected annual savings until retirement age?");
 
     yearlyRevenue.addActionListener(new java.awt.event.ActionListener() {
       public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -112,60 +113,38 @@ public class CapitalForm extends javax.swing.JFrame {
     jPanel2Layout.setHorizontalGroup(
       jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
       .addGroup(jPanel2Layout.createSequentialGroup()
-        .addContainerGap(201, Short.MAX_VALUE)
-        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-          .addComponent(yealySaving, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-          .addComponent(yearlyRevenue, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-          .addComponent(retirementAge, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
-        .addGap(247, 247, 247))
-      .addGroup(jPanel2Layout.createSequentialGroup()
         .addContainerGap()
         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-          .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGap(6, 6, 6))
           .addGroup(jPanel2Layout.createSequentialGroup()
             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-              .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+              .addComponent(yearlyRevenue, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+              .addComponent(yealySaving, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+              .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 532, javax.swing.GroupLayout.PREFERRED_SIZE)
+              .addComponent(retirementAge, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
               .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+            .addContainerGap(174, Short.MAX_VALUE))
+          .addGroup(jPanel2Layout.createSequentialGroup()
+            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+            .addGap(404, 404, 404))))
     );
     jPanel2Layout.setVerticalGroup(
       jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
       .addGroup(jPanel2Layout.createSequentialGroup()
-        .addGap(21, 21, 21)
-        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-          .addComponent(jLabel2)
-          .addComponent(retirementAge, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-        .addGap(11, 11, 11)
-        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-          .addComponent(jLabel3)
-          .addComponent(yearlyRevenue, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
-        .addGap(18, 18, 18)
-        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-          .addComponent(jLabel5)
-          .addComponent(yealySaving, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
-        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        .addContainerGap()
+        .addComponent(jLabel2)
+        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+        .addComponent(retirementAge, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+        .addComponent(jLabel3)
+        .addGap(0, 0, 0)
+        .addComponent(yearlyRevenue, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+        .addGap(0, 0, 0)
+        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
+        .addGap(0, 0, Short.MAX_VALUE)
+        .addComponent(yealySaving, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
     );
 
     LifeTime.setText("-");
-
-    javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-    jPanel3.setLayout(jPanel3Layout);
-    jPanel3Layout.setHorizontalGroup(
-      jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-      .addGroup(jPanel3Layout.createSequentialGroup()
-        .addGap(111, 111, 111)
-        .addComponent(LifeTime, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
-        .addContainerGap(275, Short.MAX_VALUE))
-    );
-    jPanel3Layout.setVerticalGroup(
-      jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-      .addGroup(jPanel3Layout.createSequentialGroup()
-        .addGap(17, 17, 17)
-        .addComponent(LifeTime, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-        .addContainerGap(19, Short.MAX_VALUE))
-    );
 
     javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
     getContentPane().setLayout(layout);
@@ -174,45 +153,46 @@ public class CapitalForm extends javax.swing.JFrame {
       .addGroup(layout.createSequentialGroup()
         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
           .addGroup(layout.createSequentialGroup()
-            .addGap(181, 181, 181)
-            .addComponent(jLabel1)
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+            .addGap(177, 177, 177)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+              .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+              .addGroup(layout.createSequentialGroup()
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(LifeTime, javax.swing.GroupLayout.PREFERRED_SIZE, 702, javax.swing.GroupLayout.PREFERRED_SIZE)))
+            .addGap(0, 0, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
               .addComponent(expectancy, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 274, javax.swing.GroupLayout.PREFERRED_SIZE)
               .addComponent(lifeExpendency, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)))
-          .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-          .addGroup(layout.createSequentialGroup()
-            .addGap(473, 473, 473)
-            .addComponent(Next, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addGap(0, 0, Short.MAX_VALUE)))
+          .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         .addContainerGap())
-      .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-        .addGap(0, 0, Short.MAX_VALUE)
-        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-        .addGap(122, 122, 122))
+      .addGroup(layout.createSequentialGroup()
+        .addGap(438, 438, 438)
+        .addComponent(Next, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
     );
     layout.setVerticalGroup(
       layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
       .addGroup(layout.createSequentialGroup()
         .addContainerGap()
         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-          .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
           .addGroup(layout.createSequentialGroup()
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(expectancy)
+            .addGap(0, 0, 0)
+            .addComponent(lifeExpendency))
+          .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
               .addComponent(jLabel1)
-              .addGroup(layout.createSequentialGroup()
-                .addComponent(expectancy)
-                .addGap(0, 0, 0)
-                .addComponent(lifeExpendency)))
-            .addGap(191, 191, 191)
-            .addComponent(Next)))
-        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+              .addGap(61, 61, 61))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+              .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+              .addComponent(LifeTime, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))))
+        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+        .addComponent(Next)
+        .addGap(0, 24, Short.MAX_VALUE))
     );
 
     pack();
@@ -220,7 +200,29 @@ public class CapitalForm extends javax.swing.JFrame {
 
   private void NextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NextActionPerformed
 
-    System.out.println(Integer.valueOf(retirementAge.getSelectedItem().toString()));
+    try {
+      Integer ExpectedYealySaving = Integer.valueOf(yealySaving.getText());
+      if (ExpectedYealySaving < 0) {
+        JOptionPane.showMessageDialog(jPanel2, "Please enter the positive number");
+        return;
+      }
+
+    } catch (Exception e) {
+      JOptionPane.showMessageDialog(jPanel2, "Please enter the right number");
+      return;
+    }
+
+    try {
+      Integer ExpectedYealyRevenue = Integer.valueOf(yearlyRevenue.getText());
+      if (ExpectedYealyRevenue < 0) {
+        JOptionPane.showMessageDialog(jPanel2, "Please enter the positive number");
+        return;
+      }
+    } catch (Exception e) {
+      JOptionPane.showMessageDialog(jPanel2, "Please enter the right number");
+      return;
+    }
+
     Integer expectedRetirementAge = Integer.valueOf(retirementAge.getSelectedItem().toString());
     int lifeTime = expectedLongevity + currentAge;
     CapitalCalculator c = new CapitalCalculator(currentAge, expectedRetirementAge, lifeTime, Integer.valueOf(yealySaving.getText()), Integer.valueOf(yearlyRevenue.getText()));
@@ -230,6 +232,10 @@ public class CapitalForm extends javax.swing.JFrame {
     Jchart.display();
   }//GEN-LAST:event_NextActionPerformed
 
+  private void retirementAgeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_retirementAgeActionPerformed
+    // TODO add your handling code here:
+  }//GEN-LAST:event_retirementAgeActionPerformed
+
   private void yealySavingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yealySavingActionPerformed
     // TODO add your handling code here:
   }//GEN-LAST:event_yealySavingActionPerformed
@@ -237,10 +243,6 @@ public class CapitalForm extends javax.swing.JFrame {
   private void yearlyRevenueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yearlyRevenueActionPerformed
     // TODO add your handling code here:
   }//GEN-LAST:event_yearlyRevenueActionPerformed
-
-  private void retirementAgeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_retirementAgeActionPerformed
-    // TODO add your handling code here:
-  }//GEN-LAST:event_retirementAgeActionPerformed
 
   /**
    * @param args the command line arguments
@@ -297,7 +299,6 @@ public class CapitalForm extends javax.swing.JFrame {
   private javax.swing.JLabel jLabel6;
   private javax.swing.JPanel jPanel1;
   private javax.swing.JPanel jPanel2;
-  private javax.swing.JPanel jPanel3;
   private javax.swing.JLabel lifeExpendency;
   private javax.swing.JComboBox<String> retirementAge;
   private javax.swing.JTextField yealySaving;
