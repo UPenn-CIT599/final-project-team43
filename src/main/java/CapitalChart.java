@@ -51,8 +51,8 @@ public class CapitalChart extends JFrame {
     // Create chart
     JFreeChart chart = ChartFactory.createXYLineChart(
             "Capital Seires",
-            "X-Axis",
-            "Y-Axis",
+            "X-Axis: Age",
+            "Y-Axis: Amount of Total Saving",
             dataset,
             PlotOrientation.VERTICAL,
             true, true, false);
@@ -78,7 +78,9 @@ public class CapitalChart extends JFrame {
     
     XYSeries series = new XYSeries("you need to invest your annual savings with an interest rate of "+ new DecimalFormat("#.##").format(yearlyIntRate*100) +  "% to achieve target retirement savings ");
     for (CapitalSeries CapitalSerie : capitalSeries) {
-      series.add(Integer.parseInt(CapitalSerie.dateStr.substring(0, 4)), CapitalSerie.capital);
+    	int yearsSinceNow = Integer.parseInt(CapitalSerie.dateStr.substring(0, 4)) - 2019;
+    	int age = currentAge + yearsSinceNow;
+      series.add(age, CapitalSerie.capital);
     }
 
     //Add series to dataset
