@@ -11,6 +11,5 @@ public class Runner {
         new LifeExpectancyForm().setVisible(true);
       }
     });
-
   }
 }
