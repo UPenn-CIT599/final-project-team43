@@ -3,7 +3,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author sally
+ * @author Songqi(Sally) Li
  */
 public class CapitalForm extends javax.swing.JFrame {
 

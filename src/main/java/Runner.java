@@ -1,7 +1,7 @@
 
 /**
  *
- * @author sally
+ * @author Songqi(Sally) Li
  */
 public class Runner {
 
