@@ -160,7 +160,7 @@ public class LifeExpectancyForm extends javax.swing.JFrame {
         .addGap(0, 0, Short.MAX_VALUE))
       .addGroup(layout.createSequentialGroup()
         .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        .addGap(87, 87, 87))
+        .addGap(0, 0, 0))
     );
     layout.setVerticalGroup(
       layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
