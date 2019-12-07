@@ -36,3 +36,7 @@ The user then choose their Retirement Age (between 65 and 85) and  provide posit
 
 ![Capital Chart](./image/CapitalChart.jpg)
 
+* You can re-enter the inputs in the second form and new results with charts will appear for comparison purpose. To close the program, you can close any of of the form/chart.
+
+![Multiple Charts](./image/MultipleCharts.jpg)
+
