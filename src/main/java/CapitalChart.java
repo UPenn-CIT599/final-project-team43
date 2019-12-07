@@ -50,7 +50,7 @@ public class CapitalChart extends JFrame {
 
     // Create chart
     JFreeChart chart = ChartFactory.createXYLineChart(
-            "Saving Projections",
+            "Saving Projections Between Current Age and Retirement Age",
             "X-Axis: Age",
             "Y-Axis: Amount of Total Saving",
             dataset,
@@ -80,9 +80,9 @@ public class CapitalChart extends JFrame {
     ArrayList<CapitalSeries> capitalSeries = c.calCapitalSeries(this.targetYearlySaving, yearlyIntRate);
     
     
-    XYSeries series = new XYSeries("At retirement age, with " + new DecimalFormat("#.#").format(yearlyIntRate*100) + "%, savings will allow an annual income of $"+ 
-    								this.targetYearlyRevenue +" until the expected age of death of " +
-    								this.expectedLongevity + " years");
+    XYSeries series = new XYSeries("With a minimum of " + new DecimalFormat("#.#").format(yearlyIntRate*100) + "% interest rate in savings annually, you can receive an income of $"+ 
+    								this.targetYearlyRevenue +" between retirement age and expected age of death of " +
+    								this.expectedLongevity);
     for (CapitalSeries CapitalSerie : capitalSeries) {
     	int yearsSinceNow = Integer.parseInt(CapitalSerie.dateStr.substring(0, 4)) - 2019;
     	int age = currentAge + yearsSinceNow;
