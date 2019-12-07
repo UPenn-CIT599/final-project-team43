@@ -16,7 +16,7 @@ class LifeExpectancyTest {
 		@Test
 		void testCalculateEx() {
 			LifeExpectancy le = new LifeExpectancy("rate.csv");
-			assertEquals(le.calculateEx("Male",0), 84);
-			assertEquals(le.calculateEx("Female",0), 89);
+			assertEquals(le.calculateEx("Male",25), 84);
+			assertEquals(le.calculateEx("Female",60), 90);
 		}
 }
