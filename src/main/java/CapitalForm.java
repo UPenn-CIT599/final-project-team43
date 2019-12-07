@@ -8,7 +8,8 @@ import javax.swing.JOptionPane;
 public class CapitalForm extends javax.swing.JFrame {
 
   int currentAge;
-  int expectedLongevity;
+  int lifeExpectancy;
+  int lifeTime;
 
   /**
    * Creates new form NewJFrame
@@ -19,8 +20,9 @@ public class CapitalForm extends javax.swing.JFrame {
   public CapitalForm(int expectancy, int currentAge) {
     initComponents();
     this.currentAge = currentAge;
-    this.expectedLongevity = expectancy;
-    LifeTime.setText(String.valueOf("Based on your current age and gender, your life expectancy is age " + this.expectedLongevity + " We will use this in the calculation of your retirement savings."));
+    this.lifeExpectancy = expectancy;
+    this.lifeTime = lifeExpectancy + currentAge;
+    LifeTime.setText(String.valueOf("Based on your current age and gender, your expected age of death is age " + this.lifeTime + ". We will use this in the calculation of your retirement savings."));
 
   }
 
@@ -161,13 +163,15 @@ public class CapitalForm extends javax.swing.JFrame {
           .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
           .addGroup(layout.createSequentialGroup()
             .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(LifeTime, javax.swing.GroupLayout.PREFERRED_SIZE, 825, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(lifeExpendency, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)))
         .addContainerGap())
       .addGroup(layout.createSequentialGroup()
         .addGap(434, 434, 434)
         .addComponent(Next, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+      .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        .addComponent(LifeTime, javax.swing.GroupLayout.PREFERRED_SIZE, 1076, javax.swing.GroupLayout.PREFERRED_SIZE)
         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
     );
     layout.setVerticalGroup(
@@ -219,10 +223,10 @@ public class CapitalForm extends javax.swing.JFrame {
     }
 
     Integer expectedRetirementAge = Integer.valueOf(retirementAge.getSelectedItem().toString());
-    int lifeTime = expectedLongevity + currentAge;
+
     CapitalCalculator c = new CapitalCalculator(currentAge, expectedRetirementAge, lifeTime, Integer.valueOf(yealySaving.getText()), Integer.valueOf(yearlyRevenue.getText()));
     System.out.println("This is min interest rate " + c.calMinYieldYearly());
-    CapitalChart Jchart = new CapitalChart("Capital Series", currentAge, Integer.valueOf(retirementAge.getSelectedItem().toString()), expectedLongevity, Integer.valueOf(yealySaving.getText()), Integer.valueOf(yearlyRevenue.getText()));
+    CapitalChart Jchart = new CapitalChart("Capital Series", currentAge, expectedRetirementAge, lifeTime, Integer.valueOf(yealySaving.getText()), Integer.valueOf(yearlyRevenue.getText()));
 //    //  ArrayList<CapitalSeries> capitalSeries = c.calCapitalSeries(Integer.valueOf(yearlyRevenue.getText()), yearlyIntRate);
     Jchart.display();
   }//GEN-LAST:event_NextActionPerformed
