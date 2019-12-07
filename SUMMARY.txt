@@ -1,0 +1,26 @@
+﻿CIT 591 FINAL PROJECT TEAM 43 
+RETIREMENT INCOME CALCULATOR
+
+
+TEAM MEMBERS
+* Le, Thi Bich Ngoc (Vy)
+* Li, Songqi (Sally)
+* Zhang, Haotian (Evan)
+
+
+PROJECT DESCRIPTION
+The program calculates the minimum interest rate for a working Canadian (18-64 age) to achieve target retirement savings plan at retirement age.
+The program has two main sections:
+* Ask the user for their age and gender and it will then calculate the expected age of death
+* It then asks the user for their planned retirement age (65+), how much annual savings they have and their target annual retirement income, i.e. how much they want to earn during their retirement years. It then calculates the minimum interest rate required to invest those savings in order to achieve their target retirement plan.
+* The program also shows a chart to illustrate how the savings grow from the current age to retirement age to achieve enough savings so that the user will receive target annual retirement income until expected age of death. 
+
+
+WHO DO WHAT
+* Vy: read in mortality table, obtain user inputs for their characteristics, calculate life expectancy, associated JUnit testing, peer review
+* Evan:        calculate interest rate based on savings plan, build chart, associated JUnit testing, peer review
+* Sally:  GUI(Swing), Event Listener, integration with other classes, JUnit testing, peer review
+
+
+LINK TO GITHUB
+https://github.com/UPenn-CIT599/final-project-team43
