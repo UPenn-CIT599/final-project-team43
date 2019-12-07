@@ -64,6 +64,7 @@ public class CapitalChart extends JFrame {
 
   /**
    * define what's for the x and y
+   *
    * @return XYDataSet
    */
   private XYDataset createDataset() {
@@ -78,14 +79,13 @@ public class CapitalChart extends JFrame {
     System.out.println(c.calMinYieldYearly());
     double yearlyIntRate = c.calMinYieldYearly();
     ArrayList<CapitalSeries> capitalSeries = c.calCapitalSeries(this.targetYearlySaving, yearlyIntRate);
-    
-    
-    XYSeries series = new XYSeries("With a minimum of " + new DecimalFormat("#.#").format(yearlyIntRate*100) + "% interest rate in savings annually, you can receive an annual income of $"+ 
-    								this.targetYearlyRevenue +" between retirement age and expected age of death of " +
-    								this.expectedLongevity);
+
+    XYSeries series = new XYSeries("With a minimum of " + new DecimalFormat("#.#").format(yearlyIntRate * 100) + "% interest rate in savings annually, you can receive an annual income of $"
+            + this.targetYearlyRevenue + " between retirement age and expected age of death of "
+            + this.expectedLongevity);
     for (CapitalSeries CapitalSerie : capitalSeries) {
-    	int yearsSinceNow = Integer.parseInt(CapitalSerie.dateStr.substring(0, 4)) - 2019;
-    	int age = currentAge + yearsSinceNow;
+      int yearsSinceNow = Integer.parseInt(CapitalSerie.dateStr.substring(0, 4)) - 2019;
+      int age = currentAge + yearsSinceNow;
       series.add(age, CapitalSerie.capital);
     }
 
@@ -105,7 +105,7 @@ public class CapitalChart extends JFrame {
               this.expectedLongevity,
               this.targetYearlySaving,
               this.targetYearlyRevenue);
-      example.setSize(800, 400);
+      example.setSize(1000, 500);
       example.setLocationRelativeTo(null);
       example.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
       example.setVisible(true);
