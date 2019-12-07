@@ -181,6 +181,7 @@ public class LifeExpectancyForm extends javax.swing.JFrame {
     expectancy = le.calculateEx(gender.getSelectedItem().toString(), age);
     CapitalForm newJFrame2 = new CapitalForm(expectancy, age);
     newJFrame2.setVisible(true);
+    this.hide();
 
   }//GEN-LAST:event_NextActionPerformed
 

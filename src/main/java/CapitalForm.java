@@ -250,6 +250,7 @@ public class CapitalForm extends javax.swing.JFrame {
     CapitalChart Jchart = new CapitalChart("Saving Projections", currentAge, expectedRetirementAge, lifeTime, Integer.valueOf(yealySaving.getText()), Integer.valueOf(yearlyRevenue.getText()));
 //    //  ArrayList<CapitalSeries> capitalSeries = c.calCapitalSeries(Integer.valueOf(yearlyRevenue.getText()), yearlyIntRate);
     Jchart.display();
+    this.hide();
   }//GEN-LAST:event_NextActionPerformed
 
   private void retirementAgeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_retirementAgeActionPerformed
