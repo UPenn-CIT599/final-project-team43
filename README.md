@@ -1,33 +1,27 @@
 # final-project-team43
 final-project-team43 created by GitHub Classroom  
-### CIT 591 FINAL PROJECT PROPOSAL
-TEAM MEMBERS
-* Le, Thi Bich Ngoc (Vy)
-* Li, Songqi (Sally)
-* Zhang, Haotian (Evan)
 
-PROJECT IDEA AND DESCRIPTION
+### CIT 591 FINAL PROJECT - RETIREMENT INCOME CALCULATOR
 
-The program will have two main sections:
-### 1) Calculating the life expectancy
-*  Ask the user inputs for their age and gender and potential other characteristics
-(such as smoking status)
-* Calculate the expected remaining life of the user using mortality tables and
-related assumptions
-### 2) Projecting their investment for retirement based on their desired income
-*  Ask the user for their retirement plan including their current portfolio value
-(savings and equities) and when they want to retire, monthly desired income.
-*  Count the amounts of saving each month for retirement based on their desired
-income and saving rate.
-* Take in monthly net savings and project their investment and whether they have
-enough savings for their desired income
-The program will have a user interface: main class.
-### WHO DO WHAT
-*  Vy: read in mortality table, obtain user inputs for their characteristics, life
-expectancy calculator, associated JUnit testing
-*  Evan: retirement plan calculator & data analysis, portfolio recommendation,
-associated JUnit testing
-* Sally: GUI(Swing), Event Listener, integration with other classes, JUnit testing,
+### HOW TO IMPORT THE PROGRAM IN ECLIPSE
+* From Github, download the files and extracted the folder, e.g. “final-project-team43-master”
+* In Eclipse, click File > Import and choose Maven > Existing Maven Projects
 
-### Check Final Project Flow Chart
+* Click Next and select the extracted folder earlier for Root Directory
+
+* Click Finish
+
+### CALCULATOR DESIGN
 ![Final Project Flow Chart](./FinalProjectFlowChart.jpg)
+
+### CALCULATOR FUNCTIONALITIES - HOW TO RUN
+* Go to the Runner class and click Run
+* The first form will appear:
+
+* Choose the appropriate gender and current age (between 18 and 64 for a working Canadian). Then click Next.
+
+* The second form as above will appear. It first lets the user know their life expectancy, i.e. the expected number of years they will still live. This will be taken into account into the calculation of the retirement plan.
+The user then choose their Retirement Age (between 65 and 85 for a typical working Canadian) and then provide positive integers for their retirement plan, specifically:
+1. What is their target annual retirement income (that they will earn between retirement age until they expect to die)?
+2. What is their expected annual savings until retirement age?
+
