@@ -80,7 +80,7 @@ public class CapitalChart extends JFrame {
     double yearlyIntRate = c.calMinYieldYearly();
     ArrayList<CapitalSeries> capitalSeries = c.calCapitalSeries(this.targetYearlySaving, yearlyIntRate);
 
-    XYSeries series = new XYSeries("With a minimum of " + new DecimalFormat("#.#").format(yearlyIntRate * 100) + "% interest rate in savings annually, you can receive an annual income of $"
+    XYSeries series = new XYSeries("With a minimum of " + new DecimalFormat("#.#").format(yearlyIntRate * 100) + "% interest rate and $" + this.targetYearlySaving +" savings annually, you can receive an annual income of $"
             + this.targetYearlyRevenue + " between retirement age and expected age of death of "
             + this.expectedLongevity);
     for (CapitalSeries CapitalSerie : capitalSeries) {
