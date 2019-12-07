@@ -6,7 +6,7 @@ final-project-team43 created by GitHub Classroom
 ### HOW TO IMPORT THE PROGRAM IN ECLIPSE
 * From Github, download the files and extracted the folder, e.g. “final-project-team43-master”
 * In Eclipse, click File > Import and choose Maven > Existing Maven Projects
-
+![Import Step 1](./Import Step 1.jpg)
 * Click Next and select the extracted folder earlier for Root Directory
 
 * Click Finish
