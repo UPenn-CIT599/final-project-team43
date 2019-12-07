@@ -28,11 +28,11 @@ final-project-team43 created by GitHub Classroom
 
 ![Capital Form](./CapitalForm.jpg)
 
-* It first lets the user know their life expectancy, i.e. the expected number of years they will still live. This will be taken into account into the calculation of the retirement plan.
-The user then choose their Retirement Age (between 65 and 85 for a typical working Canadian) and then provide positive integers for their retirement plan, specifically:
+* It first lets the user know their expected age of death. This will be used  into the calculation of the retirement plan.
+The user then choose their Retirement Age (between 65 and 85) and  provide positive integers for their retirement plan, specifically:
 1. What is their target annual retirement income (that they will earn between retirement age until they expect to die)?
-2. What is their expected annual savings until retirement age?
-* Once the users provide all the inputs, it will shows the projections of savings between current age and retirement age to illustrate how much savings will grow. It also provides the minimum interest rate required to invest the savings in order to achieve the target annual retirement income during retirement years until the expected age of death. 
+2. What is their expected annual savings between current age and retirement age?
+* Once the users provide all the inputs, it will shows the projections of savings between current age and retirement age to illustrate how much savings will need to grow in order to have enough savings to pay out the target annual retirement income during retirement years. It also provides the minimum interest rate required to invest the savings in order to achieve the target annual retirement income during retirement years until the expected age of death. 
 
 ![Capital Chart](./CapitalChart.jpg)
 
