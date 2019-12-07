@@ -1,8 +1,8 @@
 
 /**
- * Runner: use this to run the interface
+ * Runner: use this to run the capital calculator with five parameters
  *
- * @author Haotian, Sally
+ * @author Haotian
  *
  */
 public class CapitalCalculatorRunner {
@@ -11,22 +11,26 @@ public class CapitalCalculatorRunner {
   private int expectedRetirementAge = 65;
   private int expectedLongevity = 84;
   private int savingYearly = 10000;
-  private int revenueYearly = 100000;
+  private int revenueYearly = 50000;
 
+  /**
+   * define how to run capital calculator
+   */
   public void chartRunner() {
+	  // create an instance variable of calculator
     CapitalCalculator c = new CapitalCalculator(currentAge, expectedRetirementAge, expectedLongevity,
             savingYearly, revenueYearly);
     System.out.println("This is min interest rate " + c.calMinYieldYearly());
-    CapitalChart Jchart = new CapitalChart("Capital Chart", currentAge, expectedRetirementAge, expectedLongevity,
+    // create an instance variable of chart to display the result
+    CapitalChart Jchart = new CapitalChart("Saving Projections", currentAge, expectedRetirementAge, expectedLongevity,
             savingYearly, revenueYearly);
     Jchart.display();
 
   }
 
   public static void main(String[] args) {
-    //TODO: run the form
+	  // to run the form
     new CapitalCalculatorRunner().chartRunner();
-
   }
 
 }

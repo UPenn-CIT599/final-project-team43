@@ -41,8 +41,9 @@ public class CapitalCalculator {
    * @return
    */
   public double calFV(int capitalYearly, double rate, int duration) {
-    double FV = capitalYearly * (Math.pow(1 + rate, duration) - 1) / rate;
-//	System.out.println(FV);
+	  double FV;
+	  if(rate == 0) FV = capitalYearly;
+	  else FV = capitalYearly * (Math.pow(1 + rate, duration) - 1) / rate;
     return (double) FV;
   }
 
@@ -53,10 +54,10 @@ public class CapitalCalculator {
    * @return Minimal Yield Yearly
    */
   public double calMinYieldYearly() {
-    //TODO: use for loop to determine the close rate
+    // use for loop to determine the close rate
     double rate = 1;
     double PVRevenue = this.yearsOfRetirement * this.targetYearlyRevenue;
-    for (double i = 0.0001; i < rate; i += 0.0001) {
+    for (double i = 0.00001; i < rate; i += 0.0001) {
       double PVSaving = calFV(this.targetYearlySaving, i, this.yearsOfSaving);
       if (PVRevenue - PVSaving < 0) {
         // relative error is less than 1%%
@@ -74,27 +75,27 @@ public class CapitalCalculator {
    * @return
    */
   public ArrayList<CapitalSeries> calCapitalSeries(int savingYearly, double yearlyIntRate) {
-    //TODO: use for loop to create capital time series
+    // use for loop to create capital time series
     capitalSeries = new ArrayList<CapitalSeries>();
     int year;
     double currentSaving = 0;
 
     for (int i = 1; i <= this.yearsOfSaving; i++) {
       year = (2019 + i);
+      // the saving next month will be reinvest at the same rate, with the meaning of compound interest rate
       currentSaving += savingYearly * Math.pow(1 + yearlyIntRate, i);
-      capitalSeries.add(new CapitalSeries(year + "0105", currentSaving * (1 + yearlyIntRate)));
-      System.out.println(currentSaving);
+      capitalSeries.add(new CapitalSeries(year + "0105", currentSaving));
+//      System.out.println(currentSaving); // use this line to display the total saving
     }
     return capitalSeries;
   }
 
   /**
-   * Test
+   * Main for test
    *
    * @param args
    */
   public static void main(String[] args) {
-
     CapitalCalculator c = new CapitalCalculator(25, 65, 100, 30000, 48000);
     System.out.println(c.calMinYieldYearly());
     double yearlyIntRate = c.calMinYieldYearly();

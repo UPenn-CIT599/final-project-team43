@@ -50,7 +50,7 @@ public class CapitalChart extends JFrame {
 
     // Create chart
     JFreeChart chart = ChartFactory.createXYLineChart(
-            "Capital Seires",
+            "Saving Projections",
             "X-Axis: Age",
             "Y-Axis: Amount of Total Saving",
             dataset,
@@ -62,6 +62,10 @@ public class CapitalChart extends JFrame {
     setContentPane(panel);
   }
 
+  /**
+   * define what's for the x and y
+   * @return XYDataSet
+   */
   private XYDataset createDataset() {
     XYSeriesCollection dataset = new XYSeriesCollection();
 
@@ -76,7 +80,9 @@ public class CapitalChart extends JFrame {
     ArrayList<CapitalSeries> capitalSeries = c.calCapitalSeries(this.targetYearlySaving, yearlyIntRate);
     
     
-    XYSeries series = new XYSeries("you need to invest your annual savings with an interest rate of "+ new DecimalFormat("#.##").format(yearlyIntRate*100) +  "% to achieve target retirement savings ");
+    XYSeries series = new XYSeries("At retirement age, with " + new DecimalFormat("#.#").format(yearlyIntRate*100) + "%, savings will allow an annual income of $"+ 
+    								this.targetYearlyRevenue +" until the expected age of death of " +
+    								this.expectedLongevity + " years");
     for (CapitalSeries CapitalSerie : capitalSeries) {
     	int yearsSinceNow = Integer.parseInt(CapitalSerie.dateStr.substring(0, 4)) - 2019;
     	int age = currentAge + yearsSinceNow;
@@ -88,6 +94,9 @@ public class CapitalChart extends JFrame {
     return dataset;
   }
 
+  /**
+   * display the chart with parameters and a given title
+   */
   public void display() {
     SwingUtilities.invokeLater(() -> {
       CapitalChart example = new CapitalChart("Retirement Savings Illustration",
