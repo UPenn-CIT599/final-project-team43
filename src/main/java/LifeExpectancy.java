@@ -54,9 +54,9 @@ public class LifeExpectancy {
 	
 	/**
 	 * Calculate the probability of surviving from current age to future age
-	 * @param current age
-	 * @param list of mortality rates for all ages
-	 * @param future age
+	 * @param currentAge
+	 * @param rates
+	 * @param futureAge
 	 * @return probability of survivor
 	 */
 	public double calculateSurivorProb(int currentAge, ArrayList<Rate> rates, int futureAge) {
