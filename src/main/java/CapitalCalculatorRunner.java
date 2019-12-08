@@ -10,8 +10,8 @@ public class CapitalCalculatorRunner {
   private int currentAge = 25;
   private int expectedRetirementAge = 65;
   private int expectedLongevity = 84;
-  private int savingYearly = 10000;
-  private int revenueYearly = 50000;
+  private int savingYearly = 600000;
+  private int revenueYearly = 300000;
 
   /**
    * define how to run capital calculator

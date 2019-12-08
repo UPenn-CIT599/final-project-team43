@@ -7,7 +7,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 /**
- * this file is to test 6 cases for four methods in CapitalCalculator
+ * this file is to test 9 cases for four methods in CapitalCalculator
  *
  * @author Haotian Zhang
  *
@@ -27,9 +27,29 @@ class CapitalCalculatorTest {
   }
 
   @Test
-  void testcalFV() {
-    // the capital with 0 interest should be equal to the initial investment
+  void testcalFV1() {
+    // the capital with 0% interest should be equal to the initial investment
     assertEquals(c.calFV(3000, 0, 2), 3000);
+  }
+  
+  @Test
+  void testcalFV2() {
+    // the capital with 1% interest should be initial investment * (1 + interest rate) + 1
+    assertEquals((double) Math.round(c.calFV(3000, 0.01, 2) * 10000) / 10000
+    								, 6030);
+  }
+  
+  @Test
+  void testcalFV3() {
+    // the capital with 100% interest should be the initial investment * 3
+    assertEquals(c.calFV(3000, 1, 2), 9000);
+  }
+  
+  @Test
+  void testcalFV4() {
+    // the capital with 5% interest with long time should be correct
+    assertEquals((double) Math.round(c.calFV(3000, 0.05, 100) * 10000) / 10000
+    								, 7830075.4708);
   }
 
   @Test
@@ -58,6 +78,14 @@ class CapitalCalculatorTest {
     ArrayList<CapitalSeries> cs = c.calCapitalSeries(5000, 0.02);
     // when the saving amount is different, the number will change and is correct
     assertEquals(cs.get(0).capital, 5100);
+  }
+  
+  @Test
+  void testcalCapitalSeries4() {
+    ArrayList<CapitalSeries> cs = c.calCapitalSeries(5000, 0.02);
+    // when the saving amount is different, the number will change and is correct
+    assertEquals((double) Math.round(cs.get(5).capital * 10000) / 10000
+    								, 32171.4169);
   }
   
 

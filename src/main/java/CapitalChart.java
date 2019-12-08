@@ -39,7 +39,6 @@ public class CapitalChart extends JFrame {
   public CapitalChart(String title, int currentAge, int expectedRetirementAge,
           int expectedLongevity, int savingYearly, int revenueYearly) {
     super(title);
-
     this.currentAge = currentAge;
     this.expectedRetirementAge = expectedRetirementAge;
     this.expectedLongevity = expectedLongevity;
@@ -75,8 +74,8 @@ public class CapitalChart extends JFrame {
             this.expectedLongevity,
             this.targetYearlySaving,
             this.targetYearlyRevenue);
-    System.out.println(this.currentAge);
-    System.out.println(c.calMinYieldYearly());
+//    System.out.println(this.currentAge);
+//    System.out.println(c.calMinYieldYearly());
     double yearlyIntRate = c.calMinYieldYearly();
     ArrayList<CapitalSeries> capitalSeries = c.calCapitalSeries(this.targetYearlySaving, yearlyIntRate);
 
