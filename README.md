@@ -1,5 +1,4 @@
 # final-project-team43
-final-project-team43 created by GitHub Classroom  
 
 ### CIT 591 FINAL PROJECT - RETIREMENT INCOME CALCULATOR
 
