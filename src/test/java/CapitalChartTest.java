@@ -20,11 +20,11 @@ class CapitalChartTest {
 	 @Test
 	  void testParametersCorrect() {
 	    // test whether parameters were passed correctly
-	    assertEquals(chart.currentAge , 25);
-	    assertEquals(chart.expectedLongevity , 100);
-	    assertEquals(chart.targetYearlyRevenue , 5000);
-	    assertEquals(chart.targetYearlySaving , 3000);
-	    assertEquals(chart.expectedRetirementAge , 65);
+	    assertEquals(25, chart.currentAge );
+	    assertEquals(100, chart.expectedLongevity);
+	    assertEquals(5000 , chart.targetYearlyRevenue);
+	    assertEquals(3000 , chart.targetYearlySaving );
+	    assertEquals(65 , chart.expectedRetirementAge);
 	  }
 
 }
