@@ -5,6 +5,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 /**
+ * Test the form visible status for lifeExpentancyForm
  *
  * @author Songqi Li
  */
