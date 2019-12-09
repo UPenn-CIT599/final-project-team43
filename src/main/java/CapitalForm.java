@@ -247,7 +247,7 @@ public class CapitalForm extends javax.swing.JFrame {
     setBounds(0, 0, 1000, 362);
   }// </editor-fold>//GEN-END:initComponents
 /**
-   * This method is to do the calculation when user inputs the data and click "submit"
+   * user inputs the data and click "submit" and perform action
    *
    * @param evt
    */

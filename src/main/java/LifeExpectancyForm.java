@@ -10,13 +10,22 @@ import javax.swing.JButton;
 public class LifeExpectancyForm extends javax.swing.JFrame {
 
   private int expectancy;
-
   private CapitalForm capitalForm;
 
+  /**
+   * this method is to return the capital form
+   *
+   * @return
+   */
   public CapitalForm getCapitalForm() {
     return capitalForm;
   }
 
+  /**
+   * this method is to return the next button
+   *
+   * @return
+   */
   public JButton getNext() {
     return next;
   }
@@ -176,7 +185,11 @@ public class LifeExpectancyForm extends javax.swing.JFrame {
 
     pack();
   }// </editor-fold>//GEN-END:initComponents
-
+/**
+   * User inputs the data and click "next" button to perform action
+   *
+   * @param evt
+   */
   private void nextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nextActionPerformed
 
     LifeExpectancy le = new LifeExpectancy("rate.csv");

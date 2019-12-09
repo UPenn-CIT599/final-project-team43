@@ -24,6 +24,12 @@ public class LifeExpectancyFormTest {
     Assertions.assertEquals(0, this.form.getExpectancy());
   }
 
+  /**
+   * lifeExpectancyForm is not visible when capitalForm shows
+   *
+   * @throws AWTException
+   * @throws InterruptedException
+   */
   @Test
   public void testSomeMethod() throws AWTException, InterruptedException {
     Assertions.assertTrue(this.form.isVisible());
