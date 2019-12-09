@@ -248,38 +248,43 @@ public class CapitalForm extends javax.swing.JFrame {
 
     setBounds(0, 0, 1000, 362);
   }// </editor-fold>//GEN-END:initComponents
-
+/**
+   * This method is to do the calculation when user inputs the data and click "submit"
+   *
+   * @param evt
+   */
   private void nextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nextActionPerformed
-
+// handle the input error. ExpectedYealySaving and ExpectedYealyRevenue should be positive integer.Otherwise, it will pop up an massage
     try {
       Integer ExpectedYealySaving = Integer.valueOf(yealySaving.getText());
       if (ExpectedYealySaving <= 0) {
-        JOptionPane.showMessageDialog(jPanel2, "Please enter a positive integer value for expected annual savings");
+        JOptionPane.showMessageDialog(jPanel2, "Please enter a positive integer value for expected annual savings", "Positive integer needed",
+                JOptionPane.WARNING_MESSAGE);
         return;
       }
-
     } catch (Exception e) {
-      JOptionPane.showMessageDialog(jPanel2, "Please enter a positive integer value for expected annual savings");
+      JOptionPane.showMessageDialog(jPanel2, "Please enter a positive integer value for expected annual savings", "Positive integer needed",
+              JOptionPane.WARNING_MESSAGE);
       return;
     }
 
     try {
       Integer ExpectedYealyRevenue = Integer.valueOf(yearlyRevenue.getText());
       if (ExpectedYealyRevenue <= 0) {
-        JOptionPane.showMessageDialog(jPanel2, "Please enter a positive integer value for target annual retirement income");
+        JOptionPane.showMessageDialog(jPanel2, "Please enter a positive integer value for target annual retirement income", "Positive integer needed",
+                JOptionPane.WARNING_MESSAGE);
         return;
       }
     } catch (Exception e) {
-      JOptionPane.showMessageDialog(jPanel2, "Please enter a positive integer value for target annual retirement income");
+      JOptionPane.showMessageDialog(jPanel2, "Please enter a positive integer value for target annual retirement income", "Positive integer needed",
+              JOptionPane.WARNING_MESSAGE);
       return;
     }
 
     Integer expectedRetirementAge = Integer.valueOf(retirementAge.getSelectedItem().toString());
-
     CapitalCalculator c = new CapitalCalculator(currentAge, expectedRetirementAge, lifeTime, Integer.valueOf(yealySaving.getText()), Integer.valueOf(yearlyRevenue.getText()));
     System.out.println("This is min interest rate " + c.calMinYieldYearly());
     CapitalChart Jchart = new CapitalChart("Saving Projections", currentAge, expectedRetirementAge, lifeTime, Integer.valueOf(yealySaving.getText()), Integer.valueOf(yearlyRevenue.getText()));
-//    //  ArrayList<CapitalSeries> capitalSeries = c.calCapitalSeries(Integer.valueOf(yearlyRevenue.getText()), yearlyIntRate);
     Jchart.display();
   }//GEN-LAST:event_nextActionPerformed
 
