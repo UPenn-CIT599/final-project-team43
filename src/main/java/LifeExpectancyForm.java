@@ -1,12 +1,18 @@
 
+import lombok.Getter;
+
 /**
- * This form is to ask the user for their age and gender and it will then calculate the expected age of death
+ * This form is to ask the user for their age and gender and it will then calculate the expected age
+ * of death
  *
  * @author Songqi(Sally) Li
  */
+@Getter
 public class LifeExpectancyForm extends javax.swing.JFrame {
 
   private int expectancy;
+
+  private CapitalForm capitalForm;
 
   /**
    * Creates form LifeExpectanctyForm
@@ -33,7 +39,7 @@ public class LifeExpectancyForm extends javax.swing.JFrame {
     gender = new javax.swing.JComboBox<>();
     jLabel3 = new javax.swing.JLabel();
     currentAge = new javax.swing.JComboBox<>();
-    Next = new javax.swing.JButton();
+    next = new javax.swing.JButton();
 
     setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
     setBackground(new java.awt.Color(255, 255, 255));
@@ -82,13 +88,13 @@ public class LifeExpectancyForm extends javax.swing.JFrame {
 
     currentAge.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50", "51", "52", "53", "54", "55", "56", "57", "58", "59", "60", "61", "62", "63", "64" }));
 
-    Next.setBackground(new java.awt.Color(0, 102, 0));
-    Next.setForeground(new java.awt.Color(0, 102, 102));
-    Next.setText("Next");
-    Next.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, new java.awt.Color(0, 102, 0), null, new java.awt.Color(0, 102, 0)));
-    Next.addActionListener(new java.awt.event.ActionListener() {
+    next.setBackground(new java.awt.Color(0, 102, 0));
+    next.setForeground(new java.awt.Color(0, 102, 102));
+    next.setText("Next");
+    next.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, new java.awt.Color(0, 102, 0), null, new java.awt.Color(0, 102, 0)));
+    next.addActionListener(new java.awt.event.ActionListener() {
       public void actionPerformed(java.awt.event.ActionEvent evt) {
-        NextActionPerformed(evt);
+        nextActionPerformed(evt);
       }
     });
 
@@ -108,7 +114,7 @@ public class LifeExpectancyForm extends javax.swing.JFrame {
         .addGap(266, 266, 266))
       .addGroup(jPanel2Layout.createSequentialGroup()
         .addGap(346, 346, 346)
-        .addComponent(Next, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+        .addComponent(next, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
     );
     jPanel2Layout.setVerticalGroup(
@@ -123,7 +129,7 @@ public class LifeExpectancyForm extends javax.swing.JFrame {
           .addComponent(currentAge, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
           .addComponent(jLabel3))
         .addGap(24, 24, 24)
-        .addComponent(Next, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE))
+        .addComponent(next, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE))
     );
 
     javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -164,16 +170,16 @@ public class LifeExpectancyForm extends javax.swing.JFrame {
     pack();
   }// </editor-fold>//GEN-END:initComponents
 
-  private void NextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NextActionPerformed
+  private void nextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nextActionPerformed
 
     LifeExpectancy le = new LifeExpectancy("rate.csv");
     Integer age = Integer.valueOf(currentAge.getSelectedItem().toString());
     expectancy = le.calculateEx(gender.getSelectedItem().toString(), age); //calculate the life expectancy
-    CapitalForm capitalForm = new CapitalForm(expectancy, age);
-    capitalForm.setVisible(true); //second form opens
-    this.hide(); //hide the first form when the second form opens
-
-  }//GEN-LAST:event_NextActionPerformed
+    this.capitalForm = new CapitalForm(expectancy, age);
+    this.capitalForm.setVisible(true); //second form opens
+    this.setVisible(false);//hide the first form when the second form opens
+    System.out.println("HERE");
+  }//GEN-LAST:event_nextActionPerformed
 
   /**
    * get the expectancy value
@@ -184,7 +190,6 @@ public class LifeExpectancyForm extends javax.swing.JFrame {
     return expectancy;
   }
   // Variables declaration - do not modify//GEN-BEGIN:variables
-  private javax.swing.JButton Next;
   private javax.swing.JComboBox<String> currentAge;
   private javax.swing.JComboBox<String> gender;
   private javax.swing.JLabel jLabel1;
@@ -196,5 +201,6 @@ public class LifeExpectancyForm extends javax.swing.JFrame {
   private javax.swing.JPanel jPanel1;
   private javax.swing.JPanel jPanel2;
   private javax.swing.JLabel lifeTime;
+  private javax.swing.JButton next;
   // End of variables declaration//GEN-END:variables
 }

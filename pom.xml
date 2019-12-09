@@ -34,6 +34,10 @@
       <artifactId>spring-boot-starter-test</artifactId>
       <scope>test</scope>
     </dependency>
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+    </dependency>
   </dependencies>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -72,5 +76,5 @@
       </plugin>
     </plugins>
   </build>
-    <name>FinalProject</name>
+  <name>FinalProject</name>
 </project>

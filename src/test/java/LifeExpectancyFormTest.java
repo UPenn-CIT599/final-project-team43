@@ -1,26 +1,33 @@
 
-import org.junit.Before;
-import org.junit.Test;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import java.awt.AWTException;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 /**
  *
- * @author sally
+ * @author Songqi Li
  */
 public class LifeExpectancyFormTest {
 
-  public LifeExpectancyFormTest() {
-  }
+  private LifeExpectancyForm form;
 
-  @Before
+  @BeforeEach
   public void setUp() {
+    this.form = new LifeExpectancyForm();
+    this.form.setVisible(true);
   }
 
   @Test
   public void testGetExpectancy() {
-
-    LifeExpectancyForm lifeExpectancyForm = new LifeExpectancyForm();
-    assertEquals(0, lifeExpectancyForm.getExpectancy());
+    Assertions.assertEquals(0, this.form.getExpectancy());
   }
 
+  @Test
+  public void testSomeMethod() throws AWTException, InterruptedException {
+    Assertions.assertTrue(this.form.isVisible());
+    this.form.getNext().doClick();
+    Assertions.assertFalse(this.form.isVisible());
+    Assertions.assertTrue(this.form.getCapitalForm().isVisible());
+  }
 }

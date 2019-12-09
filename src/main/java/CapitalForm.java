@@ -1,5 +1,6 @@
 
 import javax.swing.JOptionPane;
+import lombok.Getter;
 
 /**
  * This form is to ask the user for their planned retirement age (65+), how much annual savings they
@@ -9,6 +10,7 @@ import javax.swing.JOptionPane;
  *
  * @author Songqi(Sally) Li
  */
+@Getter
 public class CapitalForm extends javax.swing.JFrame {
 
   int currentAge;
@@ -38,7 +40,7 @@ public class CapitalForm extends javax.swing.JFrame {
 
     lifeExpendency = new javax.swing.JLabel();
     expectancy = new javax.swing.JLabel();
-    Next = new javax.swing.JButton();
+    next = new javax.swing.JButton();
     jLabel1 = new javax.swing.JLabel();
     jPanel1 = new javax.swing.JPanel();
     jLabel6 = new javax.swing.JLabel();
@@ -60,12 +62,12 @@ public class CapitalForm extends javax.swing.JFrame {
     setBackground(new java.awt.Color(102, 102, 102));
     setFont(new java.awt.Font(".SF NS Text", 0, 14)); // NOI18N
 
-    Next.setForeground(new java.awt.Color(0, 102, 51));
-    Next.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, new java.awt.Color(0, 102, 0), java.awt.Color.gray, new java.awt.Color(0, 102, 0)));
-    Next.setLabel("SUBMIT");
-    Next.addActionListener(new java.awt.event.ActionListener() {
+    next.setForeground(new java.awt.Color(0, 102, 51));
+    next.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, new java.awt.Color(0, 102, 0), java.awt.Color.gray, new java.awt.Color(0, 102, 0)));
+    next.setLabel("SUBMIT");
+    next.addActionListener(new java.awt.event.ActionListener() {
       public void actionPerformed(java.awt.event.ActionEvent evt) {
-        NextActionPerformed(evt);
+        nextActionPerformed(evt);
       }
     });
 
@@ -215,7 +217,7 @@ public class CapitalForm extends javax.swing.JFrame {
                     .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                   .addGroup(layout.createSequentialGroup()
                     .addGap(175, 175, 175)
-                    .addComponent(Next, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                    .addComponent(next, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)))))
             .addGap(0, 0, Short.MAX_VALUE)))
         .addContainerGap())
     );
@@ -235,7 +237,7 @@ public class CapitalForm extends javax.swing.JFrame {
             .addGap(22, 22, 22)
             .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addGap(18, 18, 18)
-            .addComponent(Next, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(next, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addGap(15, 15, 15))
           .addGroup(layout.createSequentialGroup()
             .addComponent(LifeTime, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -247,7 +249,7 @@ public class CapitalForm extends javax.swing.JFrame {
     setBounds(0, 0, 1000, 362);
   }// </editor-fold>//GEN-END:initComponents
 
-  private void NextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NextActionPerformed
+  private void nextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nextActionPerformed
 
     try {
       Integer ExpectedYealySaving = Integer.valueOf(yealySaving.getText());
@@ -279,11 +281,10 @@ public class CapitalForm extends javax.swing.JFrame {
     CapitalChart Jchart = new CapitalChart("Saving Projections", currentAge, expectedRetirementAge, lifeTime, Integer.valueOf(yealySaving.getText()), Integer.valueOf(yearlyRevenue.getText()));
 //    //  ArrayList<CapitalSeries> capitalSeries = c.calCapitalSeries(Integer.valueOf(yearlyRevenue.getText()), yearlyIntRate);
     Jchart.display();
-  }//GEN-LAST:event_NextActionPerformed
+  }//GEN-LAST:event_nextActionPerformed
 
   // Variables declaration - do not modify//GEN-BEGIN:variables
   private javax.swing.JLabel LifeTime;
-  private javax.swing.JButton Next;
   private javax.swing.JLabel expectancy;
   private javax.swing.JLabel jLabel1;
   private javax.swing.JLabel jLabel2;
@@ -298,6 +299,7 @@ public class CapitalForm extends javax.swing.JFrame {
   private javax.swing.JPanel jPanel2;
   private javax.swing.JPanel jPanel3;
   private javax.swing.JLabel lifeExpendency;
+  private javax.swing.JButton next;
   private javax.swing.JComboBox<String> retirementAge;
   private javax.swing.JTextField yealySaving;
   private javax.swing.JTextField yearlyRevenue;
