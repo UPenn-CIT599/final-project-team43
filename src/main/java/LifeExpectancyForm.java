@@ -1,5 +1,5 @@
 
-import lombok.Getter;
+import javax.swing.JButton;
 
 /**
  * This form is to ask the user for their age and gender and it will then calculate the expected age
@@ -7,12 +7,19 @@ import lombok.Getter;
  *
  * @author Songqi(Sally) Li
  */
-@Getter
 public class LifeExpectancyForm extends javax.swing.JFrame {
 
   private int expectancy;
 
   private CapitalForm capitalForm;
+
+  public CapitalForm getCapitalForm() {
+    return capitalForm;
+  }
+
+  public JButton getNext() {
+    return next;
+  }
 
   /**
    * Creates form LifeExpectanctyForm
@@ -178,7 +185,6 @@ public class LifeExpectancyForm extends javax.swing.JFrame {
     this.capitalForm = new CapitalForm(expectancy, age);
     this.capitalForm.setVisible(true); //second form opens
     this.setVisible(false);//hide the first form when the second form opens
-    System.out.println("HERE");
   }//GEN-LAST:event_nextActionPerformed
 
   /**

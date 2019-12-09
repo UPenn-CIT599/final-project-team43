@@ -1,6 +1,5 @@
 
 import javax.swing.JOptionPane;
-import lombok.Getter;
 
 /**
  * This form is to ask the user for their planned retirement age (65+), how much annual savings they
@@ -10,7 +9,6 @@ import lombok.Getter;
  *
  * @author Songqi(Sally) Li
  */
-@Getter
 public class CapitalForm extends javax.swing.JFrame {
 
   int currentAge;
