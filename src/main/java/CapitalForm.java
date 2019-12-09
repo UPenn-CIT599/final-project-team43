@@ -59,7 +59,6 @@ public class CapitalForm extends javax.swing.JFrame {
     setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
     setBackground(new java.awt.Color(102, 102, 102));
     setFont(new java.awt.Font(".SF NS Text", 0, 14)); // NOI18N
-    setPreferredSize(new java.awt.Dimension(1000, 327));
 
     Next.setForeground(new java.awt.Color(0, 102, 51));
     Next.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, new java.awt.Color(0, 102, 0), java.awt.Color.gray, new java.awt.Color(0, 102, 0)));
@@ -110,24 +109,7 @@ public class CapitalForm extends javax.swing.JFrame {
     jLabel5.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
     jLabel5.setText("What is your expected annual savings until retirement age?*");
 
-    yearlyRevenue.addActionListener(new java.awt.event.ActionListener() {
-      public void actionPerformed(java.awt.event.ActionEvent evt) {
-        yearlyRevenueActionPerformed(evt);
-      }
-    });
-
-    yealySaving.addActionListener(new java.awt.event.ActionListener() {
-      public void actionPerformed(java.awt.event.ActionEvent evt) {
-        yealySavingActionPerformed(evt);
-      }
-    });
-
     retirementAge.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "65", "66", "67", "68", "69", "70", "71", "72", "73", "74", "75", "76", "77", "78", "79", "80", "81", "82", "83", "84", "85" }));
-    retirementAge.addActionListener(new java.awt.event.ActionListener() {
-      public void actionPerformed(java.awt.event.ActionEvent evt) {
-        retirementAgeActionPerformed(evt);
-      }
-    });
 
     javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
     jPanel2.setLayout(jPanel2Layout);
@@ -298,18 +280,6 @@ public class CapitalForm extends javax.swing.JFrame {
 //    //  ArrayList<CapitalSeries> capitalSeries = c.calCapitalSeries(Integer.valueOf(yearlyRevenue.getText()), yearlyIntRate);
     Jchart.display();
   }//GEN-LAST:event_NextActionPerformed
-
-  private void retirementAgeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_retirementAgeActionPerformed
-
-  }//GEN-LAST:event_retirementAgeActionPerformed
-
-  private void yealySavingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yealySavingActionPerformed
-
-  }//GEN-LAST:event_yealySavingActionPerformed
-
-  private void yearlyRevenueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yearlyRevenueActionPerformed
-
-  }//GEN-LAST:event_yearlyRevenueActionPerformed
 
   // Variables declaration - do not modify//GEN-BEGIN:variables
   private javax.swing.JLabel LifeTime;

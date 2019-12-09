@@ -76,21 +76,11 @@ public class LifeExpectancyForm extends javax.swing.JFrame {
     jLabel2.setText("Gender*");
 
     gender.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Male", "Female" }));
-    gender.addActionListener(new java.awt.event.ActionListener() {
-      public void actionPerformed(java.awt.event.ActionEvent evt) {
-        genderActionPerformed(evt);
-      }
-    });
 
     jLabel3.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
     jLabel3.setText("Current Age*");
 
     currentAge.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50", "51", "52", "53", "54", "55", "56", "57", "58", "59", "60", "61", "62", "63", "64" }));
-    currentAge.addActionListener(new java.awt.event.ActionListener() {
-      public void actionPerformed(java.awt.event.ActionEvent evt) {
-        currentAgeActionPerformed(evt);
-      }
-    });
 
     Next.setBackground(new java.awt.Color(0, 102, 0));
     Next.setForeground(new java.awt.Color(0, 102, 102));
@@ -193,14 +183,6 @@ public class LifeExpectancyForm extends javax.swing.JFrame {
   public int getExpectancy() {
     return expectancy;
   }
-  private void genderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_genderActionPerformed
-
-  }//GEN-LAST:event_genderActionPerformed
-
-  private void currentAgeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_currentAgeActionPerformed
-
-  }//GEN-LAST:event_currentAgeActionPerformed
-
   // Variables declaration - do not modify//GEN-BEGIN:variables
   private javax.swing.JButton Next;
   private javax.swing.JComboBox<String> currentAge;
